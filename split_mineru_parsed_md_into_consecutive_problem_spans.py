@@ -4,8 +4,10 @@ import os
 import re
 from glob import glob
 
-mineruparsed='/Users/l/klee_code/git_repos/parse_evaluation/miner_u_parsed/full.md'
-output_csv = '/Users/l/klee_code/git_repos/parse_evaluation/miner_u_parsed/question_spans.csv'
+
+
+mineruparsed='/Users/l/klee_code/git_repos/parse_evaluation/eaa0dd7f-206c-485e-82db-2b4b355ff0a9_origin copy (dragged).pdf-aafdc8db-4703-4b3b-809a-eadc8088d856/full.md'
+questionspan_output_csv = '/Users/l/klee_code/git_repos/parse_evaluation/outputs/question_spans.csv'
 output_csv_columns = ['spans', 'original_page_screenshot_paths']
 original_page_screenshot_path_root = '/Users/l/klee_code/git_repos/parse_evaluation/splited'
 # example:
@@ -160,7 +162,10 @@ def main():
     root_dir = os.path.dirname(mineruparsed)
     items = _find_content_list(root_dir)
     spans = _split_into_spans(items)
-    with open(output_csv, 'w', newline='') as f:
+    out_dir = os.path.dirname(questionspan_output_csv)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+    with open(questionspan_output_csv, 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(output_csv_columns)
         for span_items in spans:
@@ -168,7 +173,8 @@ def main():
             if not text:
                 continue
             writer.writerow([text, json.dumps(pdf_paths)])
-    print(f'wrote {len(spans)} spans to {output_csv}')
+    print(f'wrote {len(spans)} spans to {questionspan_output_csv}')
+
 
 
 if __name__ == '__main__':
