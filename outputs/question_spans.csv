@@ -1,10 +1,10 @@
-spans,original_page_screenshot_paths
+spans
 "Use the following passage to answer questions 1 and 2.
 
-Of the numerous American automotive pioneers, perhaps among the best known are Charles and Frank Duryea. Beginning their work of automobile building in Springfield,
-5 Massachusetts, and, after much rebuilding, they constructed their first successful vehicle in 1892 and 1893. No sooner was this finished than Frank, working alone, began work on a second vehicle having a two-cylinder engine. With this
-10 automobile, sufficient capital was attracted in 1895 to form the Duryea Motor Wagon Company in which both brothers were among the stockholders and directors. A short time after the formation of the company, this second
-15 automobile was entered by the company in the Chicago Times-Herald automobile race on Thanksgiving Day, November 28, 1895, where Frank Duryea won a victory over the other five contestants—two electric automobiles and
+Of the numerous American automotive pioneers, perhaps among the best known are Charles and Frank Duryea. Beginning their work of automobile building in Springfield,   
+5 Massachusetts, and, after much rebuilding, they constructed their first successful vehicle in 1892 and 1893. No sooner was this finished than Frank, working alone, began work on a second vehicle having a two-cylinder engine. With this   
+10 automobile, sufficient capital was attracted in 1895 to form the Duryea Motor Wagon Company in which both brothers were among the stockholders and directors. A short time after the formation of the company, this second   
+15 automobile was entered by the company in the Chicago Times-Herald automobile race on Thanksgiving Day, November 28, 1895, where Frank Duryea won a victory over the other five contestants—two electric automobiles and   
 20 three Benz machines imported from Germany.
 
 Source: Excerpt from The 1893 Duryea Automobile by Don H. Berkebile.
@@ -12,18 +12,18 @@ Source: Excerpt from The 1893 Duryea Automobile by Don H. Berkebile.
 1. Which of the following is the best summary of the passage?
 
 a. There were many automotive pioneers in America, but the best known were the brothers Charles and Frank Duryea, who began building automobiles in Springfield, Massachusetts.
-b. Charles and Frank Duryea were among the best-known American automotive pioneers, but Frank was more famous than his brother Charles because Frank won the Chicago Times-Herald automobile race.
-c. On Thanksgiving Day, November 28, 1895, Frank Duryea won the Chicago Times-Herald automobile race over five other contestants: two electric automobiles and three Benz machines from Germany.
-d. Charles and Frank Duryea were pioneering automobile builders, and Frank developed a profitable two-cylinder engine vehicle with which he won the Chicago Times-Herald automobile race.
+b. Charles and Frank Duryea were among the best-known American automotive pioneers, but Frank was more famous than his brother Charles because Frank won the Chicago Times-Herald automobile race.   
+c. On Thanksgiving Day, November 28, 1895, Frank Duryea won the Chicago Times-Herald automobile race over five other contestants: two electric automobiles and three Benz machines from Germany.   
+d. Charles and Frank Duryea were pioneering automobile builders, and Frank developed a profitable two-cylinder engine vehicle with which he won the Chicago Times-Herald automobile race.   
 e. Although Frank Duryea developed a two-cylinder engine vehicle, both he and his brother Charles profited from it because it earned them the capital to start the Duryea Motor Wagon Company.
 
 2. In the passage, the author describes the kinds of cars Frank Duryea defeated in the Chicago Times-Herald automobile race in order to
 
-a. show that the best automobiles in the world are built in Springfield, Massachusetts.
-b. imply that he would later develop an electric car for the Duryea Motor Wagon Company.
-c. indicate that the quality of automobiles being developed in Europe was very poor at the time.
-d. suggest that the kind of car he drove is what helped him win the race.
-e. help the reader understand the differences between two-cylinder vehicles and electric automobiles.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p01.pdf""]"
+a. show that the best automobiles in the world are built in Springfield, Massachusetts.   
+b. imply that he would later develop an electric car for the Duryea Motor Wagon Company.   
+c. indicate that the quality of automobiles being developed in Europe was very poor at the time.   
+d. suggest that the kind of car he drove is what helped him win the race.   
+e. help the reader understand the differences between two-cylinder vehicles and electric automobiles."
 "Use the following passage to answer questions 3 through 5.
 
 It is not always easy to identify a stone, even with a fresh surface; in a weathered specimen it is often impossible. For this reason the material of which a specimen is made may not be correctly named; frequently the alteration due to exposure will change the appearance of a rock very much, and in such a case the best that can be done is to tell what it looks most like. The material of a majority of specimens, however, or at least the classes of rock to which they belong, as granite, porphyry, etc., are correctly named; to give a more exact name would be possible only by the destruction or injury of the specimen.
@@ -32,27 +32,27 @@ Source: Excerpt from Stone Art by Gerard Fowke
 
 3. The author's ideas could best be reinforced with illustrations of rocks
 
-a. in different stages of weathering.
-b. in the granite and porphyry classes.
-c. procured from the bottom of the ocean.
-d. that have been completely destroyed.
+a. in different stages of weathering.   
+b. in the granite and porphyry classes.   
+c. procured from the bottom of the ocean.   
+d. that have been completely destroyed.   
 e. commonly found in most areas of the United States.
 
 4. Which of the following would be the best title for this passage?
 
-a. ""The Names of Various Rocks""
-b. ""Why Granite Is Called Granite""
-c. ""The Classes of Rocks""
-d. ""Why Rocks Must Be Destroyed""
+a. ""The Names of Various Rocks""   
+b. ""Why Granite Is Called Granite""   
+c. ""The Classes of Rocks""   
+d. ""Why Rocks Must Be Destroyed""   
 e. ""The Difficulties of Identifying Rocks""
 
 5. What is the best definition for the word fresh as it is used in line 2 of the passage?
 
-a. novel
-b. unmarked
-c. bright
-d. clean
-e. airy","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p02.pdf""]"
+a. novel   
+b. unmarked   
+c. bright   
+d. clean   
+e. airy"
 "Use the following passage to answer question 6.
 
 The Pennsylvania Dutch are a hard working people and as they say, ""Them that works hard, eats hearty."" The blending of recipes from their many home lands and the ingredients available
@@ -63,20 +63,20 @@ Source: Excerpt from Pennsylvania Dutch Cooking
 
 6. The author of this passage would most likely agree with which of the following statements?
 
-a. The Pennsylvania Dutch people work harder than any other group of people in America.
-b. One of the distinguishing characteristics of the Pennsylvania Dutch people is their excellent cuisine.
-c. The Pennsylvania Dutch people are known throughout the world for their colorful and amusing sayings.
-d. No group of people blends recipes as well as the Pennsylvania Dutch people do.
-e. If fathers and sons in Pennsylvania Dutch families made food, it would not be as good as the food mothers and daughters make.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p02.pdf""]"
+a. The Pennsylvania Dutch people work harder than any other group of people in America.   
+b. One of the distinguishing characteristics of the Pennsylvania Dutch people is their excellent cuisine.   
+c. The Pennsylvania Dutch people are known throughout the world for their colorful and amusing sayings.   
+d. No group of people blends recipes as well as the Pennsylvania Dutch people do.   
+e. If fathers and sons in Pennsylvania Dutch families made food, it would not be as good as the food mothers and daughters make."
 "Use the following passage pair to answer questions 7 through 10.
 
 # Passage 1
 
 The variety of species among the jumping spiders appears almost infinite. The genus, or rather family of Epeira, is here characterized by many singular forms; some species have
 
-5 pointed coriaceous shells, others enlarged and spiny tibiae. Every path in the forest is barricaded with the strong yellow web of a species belonging to the same division with the Epeira clavipes of Fabricius, which was formerly said
-10 by Sloane to make, in the West Indies, webs so strong as to catch birds. A small and pretty kind of spider, with very long forelegs, and which appears to belong to an undescribed genus, lives as a parasite on almost every one of these
-15 webs. I suppose it is too insignificant to be noticed by the great Epeira, and is therefore allowed to prey on the minute insects, which, adhering to the lines, would otherwise be wasted. When frightened, this little spider
+5 pointed coriaceous shells, others enlarged and spiny tibiae. Every path in the forest is barricaded with the strong yellow web of a species belonging to the same division with the Epeira clavipes of Fabricius, which was formerly said   
+10 by Sloane to make, in the West Indies, webs so strong as to catch birds. A small and pretty kind of spider, with very long forelegs, and which appears to belong to an undescribed genus, lives as a parasite on almost every one of these   
+15 webs. I suppose it is too insignificant to be noticed by the great Epeira, and is therefore allowed to prey on the minute insects, which, adhering to the lines, would otherwise be wasted. When frightened, this little spider   
 20 either feigns death by extending its front legs, or suddenly drops from the web.
 
 Source: Excerpt from Some Wonderful Spiders by Charles Darwin
@@ -85,7 +85,7 @@ Source: Excerpt from Some Wonderful Spiders by Charles Darwin
 
 There are, among spiders, two forms of protective modification: the first, including all cases of protective resemblance to vegetable and inorganic things—that is, all modifications of color
 
-5 or of color and form that tend to make them inconspicuous in their natural relations—I shall call direct protection. The second form, which I shall call indirect protection, includes two classes, the spiders which are specially pro-
+5 or of color and form that tend to make them inconspicuous in their natural relations—I shall call direct protection. The second form, which I shall call indirect protection, includes two classes, the spiders which are specially pro-  
 10 tected themselves and those which mimic other creatures which are specially protected.
 
 Spiders are specially protected when they become inedible through the acquisition of hard plates and sharp spines. The modification of form is frequently accompanied by conspicuous colors, which warn their enemies that they belong to an unpalatable class.
@@ -94,35 +94,35 @@ Source: Excerpt from Protective Resemblances in Spiders by Elizabeth G. Pechham
 
 7. Which of the following best describes the relationship between Passage 1 and Passage 2?
 
-a. Passage 1 makes an argument and Passage 2 contradicts it.
-b. Passage 1 introduces an idea and Passage 2 expands on it.
-c. Passage 1 introduces a difficult concept and Passage 2 explains it.
-d. Passage 1 states facts and Passage 2 states opinions.
+a. Passage 1 makes an argument and Passage 2 contradicts it.   
+b. Passage 1 introduces an idea and Passage 2 expands on it.   
+c. Passage 1 introduces a difficult concept and Passage 2 explains it.   
+d. Passage 1 states facts and Passage 2 states opinions.   
 e. Passage 1 makes a claim and Passage 2 supports that claim.
 
 8. With which of the following statements about the undescribed genus of spider that lives in the West Indies would the author of Passage 1 most likely agree?
 
-a. It deserves to be named.
-b. It is unimportant.
-c. It is uniquely attractive.
-d. It is an enemy of many animals.
+a. It deserves to be named.   
+b. It is unimportant.   
+c. It is uniquely attractive.   
+d. It is an enemy of many animals.   
 e. It is cowardly.
 
 9. In what way is Passage 1 different from Passage 2?
 
-a. Passage 1 describes the behaviors of several animals.
-b. Passage 1 uses scientific research to support its conclusions.
-c. Passage 1 is written from a first-person perspective.
-d. Passage 1 includes personal opinions.
+a. Passage 1 describes the behaviors of several animals.   
+b. Passage 1 uses scientific research to support its conclusions.   
+c. Passage 1 is written from a first-person perspective.   
+d. Passage 1 includes personal opinions.   
 e. Passage 1 describes how spiders use their bodies to protect themselves.
 
 10. The primary concern of Passage 2 is
 
-a. establishing a definition of the term protective modification.
-b. describing how the colors of their bodies help to protect spiders.
-c. identifying why certain spiders have sharp spines on their bodies.
-d. providing details about the Epeira clavipes of Fabricius.
-e. explaining the two main ways spiders use their bodies to protect themselves.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p03.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p04.pdf""]"
+a. establishing a definition of the term protective modification.   
+b. describing how the colors of their bodies help to protect spiders.   
+c. identifying why certain spiders have sharp spines on their bodies.   
+d. providing details about the Epeira clavipes of Fabricius.   
+e. explaining the two main ways spiders use their bodies to protect themselves."
 "Use the following passage to answer questions 11 and 12.
 
 Frederick Douglass lived so long, and played so conspicuous a part on the world's stage, that it would be impossible, in a work of the size of this, to do more than touch upon the salient
@@ -137,19 +137,19 @@ Source: Frederick Douglass by Charles Chestnutt
 
 11. The passage suggests that Frederick Douglass
 
-a. was most concerned with being loved by other people.
-b. mostly influenced matters in his hometown.
-c. had a uniquely engaging personality.
-d. has been the topic of many long history books.
+a. was most concerned with being loved by other people.   
+b. mostly influenced matters in his hometown.   
+c. had a uniquely engaging personality.   
+d. has been the topic of many long history books.   
 e. was mostly famous for being a great speaker.
 
 12. In the passage, the word salient most nearly means
 
-a. outstanding.
-b. factual.
-c. silent.
-d. minor.
-e. proven.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p04.pdf""]"
+a. outstanding.   
+b. factual.   
+c. silent.   
+d. minor.   
+e. proven."
 "Use the following passage to answer questions 13 through 15.
 
 The account of this second journey of the Polos may be read in the wonderful book which Marco afterwards wrote to describe the won-ders of the world. They went from Lajazzo
@@ -170,27 +170,27 @@ Source: Excerpt from A Short History of the World by H.G. Wells
 
 13. The passage suggests that Marco Polo was
 
-a. generally easy to convince of fantastical things.
-b. a man who possessed multiple extraordinary skills.
-c. a coward compared to Arabian sailors.
-d. homesick much of his life.
+a. generally easy to convince of fantastical things.   
+b. a man who possessed multiple extraordinary skills.   
+c. a coward compared to Arabian sailors.   
+d. homesick much of his life.   
 e. often in poor health because of his exhausting lifestyle.
 
 14. The passage is primarily concerned with
 
-a. the written work of Marco Polo.
-b. Marco Polo's experiences in Turcomania.
-c. the landscape of Badakhshan.
-d. the travels of Marco Polo.
+a. the written work of Marco Polo.   
+b. Marco Polo's experiences in Turcomania.   
+c. the landscape of Badakhshan.   
+d. the travels of Marco Polo.   
 e. the people with whom Marco Polo traveled.
 
 15. In line 1, the word account most nearly means
 
-a. report.
-b. balance.
-c. judgment.
-d. credit.
-e. reason.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p04.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p05.pdf""]"
+a. report.   
+b. balance.   
+c. judgment.   
+d. credit.   
+e. reason."
 "Use the following passage pair to answer questions 16 through 18.
 
 # Passage 1
@@ -207,70 +207,71 @@ At ten years old I was taken home to assist my father in his business, which was
 
 I disliked the trade, and had a strong inclination for the sea, but my father declared
 
-against it; however, living near the water, I was much in and about it, learnt early to swim well,
-15 and to manage boats; and when in a boat or canoe with other boys, I was commonly allowed to govern, especially in any case of difficulty; and upon other occasions I was generally a leader among the boys, and sometimes led
+against it; however, living near the water, I was much in and about it, learnt early to swim well,   
+15 and to manage boats; and when in a boat or canoe with other boys, I was commonly allowed to govern, especially in any case of difficulty; and upon other occasions I was generally a leader among the boys, and sometimes led   
 20 them into scrapes, of which I will mention one instance, as it shows an early projecting public spirit, tho' not then justly conducted.
 
 Source: Excerpt from Benjamin Franklin: His Autobiography by Benjamin Franklin
 
 16. Based on the information in Passage 2, one can conclude that Benjamin Franklin
 
-a. wished he could follow in his father's footsteps.
-b. never learned how to make candles.
-c. tended to communicate informally.
-d. preferred making candles to boiling soap.
+a. wished he could follow in his father's footsteps.   
+b. never learned how to make candles.   
+c. tended to communicate informally.   
+d. preferred making candles to boiling soap.   
 e. was not well liked by the other boys.
 
 17. Which of the following is a difference between Passage 1 and Passage 2?
 
-a. Passage 1 is more humorous than Passage 2.
-b. Passage 1 tells the story of one person's life.
-c. Passage 1 is about the life of an important American.
-d. Passage 1 is more specific than Passage 2.
+a. Passage 1 is more humorous than Passage 2.   
+b. Passage 1 tells the story of one person's life.   
+c. Passage 1 is about the life of an important American.   
+d. Passage 1 is more specific than Passage 2.   
 e. Passage 1 focuses more on a particular period of time.
 
 18. Which of the following best describes the relationship between Passage 1 and Passage 2?
 
-a. Passage 1 discusses a topic objectively and Passage 2 discusses it personally.
-b. Passage 1 presents a question and Passage 2 answers it.
-c. Passage 1 describes a method and Passage 2 shows how it is put to use.
-d. Passage 1 presents information that contradicts Passage 2.
-e. Passage 1 describes a specific aspect of Passage 2.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p05.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p06.pdf""]"
+a. Passage 1 discusses a topic objectively and Passage 2 discusses it personally.   
+b. Passage 1 presents a question and Passage 2 answers it.   
+c. Passage 1 describes a method and Passage 2 shows how it is put to use.   
+d. Passage 1 presents information that contradicts Passage 2.   
+e. Passage 1 describes a specific aspect of Passage 2."
 "Use the following passage to answer questions 19 through 21.
 
-The steamboat was, if anything, a little ahead of the steam engine in its earlier phases. There was a steamboat, the Charlotte Dundas, on the Firth of Clyde Canal in 1802, and in 1807 an Ameri-
-5 can named Fulton had a steamer, the Clermont, with British-built engines, upon the Hudson River above New York. The first steamship to put to sea was also an American, the Phænix, which went from New York (Hoboken) to Phil-
-10 adelphia. So, too, was the first ship using steam (she also had sails) to cross the Atlantic, the Savannah (1819). All these were paddle-wheel boats and paddle-wheel boats are not adapted to work in heavy seas. The paddles smash too
+The steamboat was, if anything, a little ahead of the steam engine in its earlier phases. There was a steamboat, the Charlotte Dundas, on the Firth of Clyde Canal in 1802, and in 1807 an Ameri-  
+5 can named Fulton had a steamer, the Clermont, with British-built engines, upon the Hudson River above New York. The first steamship to put to sea was also an American, the Phænix, which went from New York (Hoboken) to Phil-  
+10 adelphia. So, too, was the first ship using steam (she also had sails) to cross the Atlantic, the Savannah (1819). All these were paddle-wheel boats and paddle-wheel boats are not adapted to work in heavy seas. The paddles smash too   
 15 easily, and the boat is then disabled. The screw steamship followed rather slowly. Many difficulties had to be surmounted before the screw was a practicable thing.
 
 Source: Excerpt from The Frontier in American History by Frederick Jackson Turner
 
-A TIMELINE OF EARLY STEAMSHIP HISTORY
+A TIMELINE OF EARLY STEAMSHIP HISTORY 
+
 <table><tr><td>1807</td><td>The steamboat emerges as a practical form of travel.</td></tr><tr><td>1811</td><td>The first steamboat travels the Mississippi River.</td></tr><tr><td>1818</td><td>First steamboat service on the Mediterranean Sea</td></tr><tr><td>1819</td><td>The first steamboat crosses the Atlantic Ocean.</td></tr><tr><td>1838</td><td>First transatlantic steamboat service</td></tr><tr><td>1851</td><td>John Elder patents compound steam engine.</td></tr></table>
 
 19. The main purpose of this passage is to
 
-a. compare the steamboat to the steam engine.
-b. provide information about the early history of the steamboat.
-c. explain why Fulton was an important American.
-d. provide a list of important dates in steamboat history.
+a. compare the steamboat to the steam engine.   
+b. provide information about the early history of the steamboat.   
+c. explain why Fulton was an important American.   
+d. provide a list of important dates in steamboat history.   
 e. describe the flaws in the paddle-wheel boats.
 
 20. Based on information in the passage and the timeline, which of the following is most likely true?
 
-a. The Charlotte Dundas was the first steamboat to travel on the Mississippi River.
-b. The Phoenix was the first steamboat to cross the Atlantic Ocean in 1819.
-c. The Savannah was the first steamboat service on the Mediterranean Sea.
-d. The screw steamship was identical to the compound steam engine.
+a. The Charlotte Dundas was the first steamboat to travel on the Mississippi River.   
+b. The Phoenix was the first steamboat to cross the Atlantic Ocean in 1819.   
+c. The Savannah was the first steamboat service on the Mediterranean Sea.   
+d. The screw steamship was identical to the compound steam engine.   
 e. The Clermont helped demonstrate that the steamboat was a practical form of travel.
 
 21. Which of the following could be a factor in the difference between the steamships described in this passage and the steamships developed after them?
 
-a. The steamships developed after them could not cross oceans.
-b. The steamships developed after them were the first to use British-built engines.
-c. The steamships developed after them were made in America.
-d. The steamships developed after them probably did not have paddles.
-e. The steamships developed after them were paddle-wheel boats.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p06.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p07.pdf""]"
+a. The steamships developed after them could not cross oceans.   
+b. The steamships developed after them were the first to use British-built engines.   
+c. The steamships developed after them were made in America.   
+d. The steamships developed after them probably did not have paddles.   
+e. The steamships developed after them were paddle-wheel boats."
 "Use the following passage to answer questions 22 and 23.
 
 The most ancient materials used for recording events were bricks, tiles, shells, and tables of stone. The modes of writing on these different substances were various. The tiles and brick were impressed with a stamp when in a soft state; the shells and tablets of stone were etched or graven, the figures or characters being cut in their surface, and in some cases also stained with various colors. It was by the ancient art of stamping that the walls, palaces, and towers of Babylon were covered with hieroglyphics, which have but recently been brought to light from under the immense mounds of Mesopotamia by Layard and other explorers.
@@ -299,7 +300,7 @@ c. was covered in hieroglyphics.
 
 d. would harden.
 
-e. was graven.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p07.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p08.pdf""]"
+e. was graven."
 "Use the following passage to answer questions 24 and 25.
 
 A history of architecture is a record of man's efforts to build beautifully. The erection of structures devoid of beauty is mere building, a trade and not an art. Edifices in which
@@ -332,7 +333,7 @@ c. illustrate the different uses of architecture.
 
 d. contrast them with architecture.
 
-e. provide a definition of the term architecture.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p08.pdf""]"
+e. provide a definition of the term architecture."
 "Use the following passage to answer question 26.
 
 A man can live for three days without bread, but no man can live for one day without poetry, was an aphorism of Baudelaire. You can live without pictures and music but you cannot live
@@ -351,12 +352,12 @@ c. The author of the passage thinks that poetry is more important than pictures 
 
 d. Dinners and Dishes is more concerned with pictures and music than eating.
 
-e. The author of the passage believes that there is nothing poetic about pictures and music.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p08.pdf""]"
+e. The author of the passage believes that there is nothing poetic about pictures and music."
 "Use the following passage to answer questions 27 through 29.
 
 Wood exhibits its greatest strength in tension parallel to the grain, and it is very uncommon in practice for a specimen to be pulled in two lengthwise. This is due to the difficulty of mak-
 
-5 ing the end fastenings secure enough for the full tensile strength to be brought into play before the fastenings shear off longitudinally. This is not the case with metals, and as a result they are used in almost all places where tensile
+5 ing the end fastenings secure enough for the full tensile strength to be brought into play before the fastenings shear off longitudinally. This is not the case with metals, and as a result they are used in almost all places where tensile   
 10 strength is particularly needed, even though the remainder of the structure, such as sills, beams, joists, posts, and flooring, may be of wood. Thus in a wooden truss bridge the tension members are steel rods.
 
 15 The tensile strength of wood parallel to the grain depends upon the strength of the fibres and is affected not only by the nature and dimensions of the wood elements but also by their arrangement. It is greatest in straight-
@@ -365,34 +366,36 @@ Wood exhibits its greatest strength in tension parallel to the grain, and it is 
 
 Source: Excerpt from The Mechanical Properties of Wood by Samuel J. Record
 
-RATIO OF STRENGTH OF WOOD IN TENSION AND IN COMPRESSION
-(BUL. 10, U.S. DIV. OF FORESTRY, p. 44)
+RATIO OF STRENGTH OF WOOD IN TENSION AND IN COMPRESSION   
+(BUL. 10, U.S. DIV. OF FORESTRY, p. 44) 
+
 <table><tr><td rowspan=""3"">Kind of Wood</td><td rowspan=""2"">Ratio: R = Tensile strength</td><td colspan=""2"">A stick 1 square inch in cross section.</td></tr><tr><td colspan=""2"">Weight required to—</td></tr><tr><td>Compressive strength</td><td>Pull apart</td><td>Crush endwise</td></tr><tr><td>Hickory</td><td>3.7</td><td>32,000</td><td>8,500</td></tr><tr><td>Elm</td><td>3.8</td><td>29,000</td><td>7,500</td></tr><tr><td>Larch</td><td>2.3</td><td>19,400</td><td>8,600</td></tr><tr><td>Longleaf Pine</td><td>2.2</td><td>17,300</td><td>7,400</td></tr></table>
+
 NOTE.—Moisture condition not given.
 
 27. According to the passage, all of the following probably lacked considerable tensile strength EXCEPT
 
-a. sills.
-b. beams.
-c. rods in a truss bridge.
-d. joists.
+a. sills.   
+b. beams.   
+c. rods in a truss bridge.   
+d. joists.   
 e. flooring.
 
 28. Based on information in the passage and the table, which of the following woods is most likely to have cross grain?
 
-a. hickory
-b. elm
-c. larch
-d. balsa
+a. hickory   
+b. elm   
+c. larch   
+d. balsa   
 e. longleaf pine
 
 29. Based on information in the passage and the table, which of the following is a factor that may affect the tensile strength of wood that is not indicated in the passage?
 
-a. grain direction
-b. fiber strength
-c. nature of the wood elements
-d. moisture condition
-e. dimensions of the wood elements","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p09.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p10.pdf""]"
+a. grain direction   
+b. fiber strength   
+c. nature of the wood elements   
+d. moisture condition   
+e. dimensions of the wood elements"
 "Use the following passage to answer question 30.
 
 The humorous story is strictly a work of art—high and delicate art—and only an artist can tell it; but no art is necessary in telling the comic and the witty story; anybody can do it.
@@ -403,11 +406,11 @@ Source: Excerpt from ""How to Tell a Story"" by Mark Twain
 
 30. Which statement, if it were true, most significantly weakens the argument in the passage?
 
-a. Native American storytellers had been telling humorous stories for hundreds of years.
-b. The plays of Aristophanes are among the earliest examples of humorous stories in writing.
-c. Mark Twain is widely regarded as one of the wittiest writers in American literature.
-d. The word art is most commonly applied to visual arts such as painting, sculpture, and drawing.
-e. It is important to understand certain rules before attempting to tell a comic story.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p10.pdf""]"
+a. Native American storytellers had been telling humorous stories for hundreds of years.   
+b. The plays of Aristophanes are among the earliest examples of humorous stories in writing.   
+c. Mark Twain is widely regarded as one of the wittiest writers in American literature.   
+d. The word art is most commonly applied to visual arts such as painting, sculpture, and drawing.   
+e. It is important to understand certain rules before attempting to tell a comic story."
 "Use the following passage to answer questions 31 through 33.
 
 Whenever we hear the name of Napoleon mentioned, or see it printed in a book, it is usually in connection with a hard-fought victory on the battlefield. He certainly spent most of his life in the camp, and enjoyed the society of soldiers more than that of courtiers. The thunder of guns, the charge of cavalry, and the flash of bayonets as they glittered in the sun, appealed to him with much the same force as music to more ordinary folk...
@@ -418,82 +421,82 @@ Source: Excerpt from The Story of Napoleon by Harold F.B. Wheeler
 
 31. As it is used in the context of the sentence, which word best describes the meaning of force (line 9)?
 
-a. compel
-b. intensity
-c. shove
-d. pry
+a. compel   
+b. intensity   
+c. shove   
+d. pry   
 e. weight
 
 32. Which conclusion can be reached from the passage?
 
-a. The childhoods of people with intimidating reputations are often ignored.
-b. Nobody had ever considered Napoleon's childhood before this passage was written.
-c. Nothing is known about Napoleon's childhood at all.
-d. All details about Napoleon's childhood are based on speculation rather than concrete fact.
+a. The childhoods of people with intimidating reputations are often ignored.   
+b. Nobody had ever considered Napoleon's childhood before this passage was written.   
+c. Nothing is known about Napoleon's childhood at all.   
+d. All details about Napoleon's childhood are based on speculation rather than concrete fact.   
 e. Great conquerors never have noteworthy childhoods.
 
 33. According to the passage, which of the following did Napoleon most likely prefer?
 
-b. listening to music
-c. plotting a battle
-d. camping on a battlefield
+b. listening to music   
+c. plotting a battle   
+d. camping on a battlefield   
 e. visiting Corsica
 
-a. leading soldiers on the battlefield","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p10.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p11.pdf""]"
+a. leading soldiers on the battlefield"
 "Use the following passage to answer questions 34 through 38.
 
-The color of animals is by no means a matter of chance; it depends on many considerations, but in the majority of cases tends to protect the animal from danger by rendering it less conspicu-
-5 ous. Perhaps it may be said that if coloring is mainly protective, there ought to be but few brightly colored animals. There are, however, not a few cases in which vivid colors are themselves protective. The kingfisher itself, though
-10 so brightly colored, is by no means easy to see. The blue harmonizes with the water, and the bird as it darts along the stream looks almost like a flash of sunlight; besides which, protection is not the only consideration. Let us now
+The color of animals is by no means a matter of chance; it depends on many considerations, but in the majority of cases tends to protect the animal from danger by rendering it less conspicu-  
+5 ous. Perhaps it may be said that if coloring is mainly protective, there ought to be but few brightly colored animals. There are, however, not a few cases in which vivid colors are themselves protective. The kingfisher itself, though   
+10 so brightly colored, is by no means easy to see. The blue harmonizes with the water, and the bird as it darts along the stream looks almost like a flash of sunlight; besides which, protection is not the only consideration. Let us now   
 15 consider the prevalent colors of animals and see how far they support the rule.
 
 Desert animals are generally the color of the desert. Thus, for instance, the lion, the antelope, and the wild ass are all sand-colored.
 
-20 ""Indeed,"" says Canon Tristram, ""in the desert, where neither trees, brushwood, nor even undulation of the surface afford the slightest protection to its foes, a modification of color which shall be assimilated to that of the sur-
-25 rounding country is absolutely necessary. Hence, without exception, the upper plumage of every bird, whether lark, chat, sylvain, or sand grouse, and also the fur of all the smaller mammals and the skin of all the snakes and
+20 ""Indeed,"" says Canon Tristram, ""in the desert, where neither trees, brushwood, nor even undulation of the surface afford the slightest protection to its foes, a modification of color which shall be assimilated to that of the sur-  
+25 rounding country is absolutely necessary. Hence, without exception, the upper plumage of every bird, whether lark, chat, sylvain, or sand grouse, and also the fur of all the smaller mammals and the skin of all the snakes and   
 30 lizards, is of one uniform sand color.""
 
 Source: Excerpt from ""The Colors of Animals"" by Sir John Lubbock
 
 34. The author's use of the word harmonizes in line 11 emphasizes
 
-a. the sweet sound of the kingfisher's song.
-b. the musical sound of flowing water.
-c. the appealing glimmer of sunlight.
-d. how the kingfisher blends with its environment.
+a. the sweet sound of the kingfisher's song.   
+b. the musical sound of flowing water.   
+c. the appealing glimmer of sunlight.   
+d. how the kingfisher blends with its environment.   
 e. how the sounds of a bird and water blend.
 
 35. Which of the following alternate titles would be the most appropriate for this passage?
 
-a. ""Colors of the Desert""
-b. ""Camouflage in the Wild""
-c. ""The Plumage of Birds""
-d. ""Why Kingfishers Are Blue""
+a. ""Colors of the Desert""   
+b. ""Camouflage in the Wild""   
+c. ""The Plumage of Birds""   
+d. ""Why Kingfishers Are Blue""   
 e. ""The Vivid Colors of Animals""
 
 36. In the first sentence, conspicuous most closely means
 
-a. hidden.
-b. conspiratorial.
-c. obvious.
-d. conscious.
+a. hidden.   
+b. conspiratorial.   
+c. obvious.   
+d. conscious.   
 e. attractive.
 
 37. The author includes the quotation from Canon Tristram in order to
 
-a. show that authorities agree with the author's opinions.
-b. illustrate an idea that the author could not have explained himself.
-c. support an argument that is not very popular.
-d. prove that birds are unique creatures.
+a. show that authorities agree with the author's opinions.   
+b. illustrate an idea that the author could not have explained himself.   
+c. support an argument that is not very popular.   
+d. prove that birds are unique creatures.   
 e. develop upon an idea the author had already introduced.
 
 38. Based on the information in the passage, desert animals might not need to be the color of sand if the desert
 
-a. did not have so many trees.
-b. had more colorful sand.
-c. was cooler.
-d. experienced more surface changes.
-e. had fewer animals.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p11.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p12.pdf""]"
+a. did not have so many trees.   
+b. had more colorful sand.   
+c. was cooler.   
+d. experienced more surface changes.   
+e. had fewer animals."
 "Use the following passage to answer questions 39 and 40.
 
 Although very much yet remains to be learned about this old earth, it is a remarkable fact that man, through the exercise of his highest faculty, has come to know so much concerning it.
@@ -510,19 +513,19 @@ Source: Excerpt from Geology: The Science of the Earth's Crust by William J. Mil
 
 39. As used in the passage, the word space most nearly means
 
-a. portion of area.
-b. atmosphere beyond Earth.
-c. room.
-d. surface.
+a. portion of area.   
+b. atmosphere beyond Earth.   
+c. room.   
+d. surface.   
 e. depth.
 
 40. Which of the following best describes the point of view of the passage?
 
-a. first person
-b. second person
-c. third person
-d. fourth person
-e. fifth person","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p12.pdf""]"
+a. first person   
+b. second person   
+c. third person   
+d. fourth person   
+e. fifth person"
 "Use the following passage to answer questions 41 and 42.
 
 Science is knowledge; it is what we know. But mere knowledge is not science. For a bit of knowledge to become a part of science, its relation to other bits of knowledge must be found.
@@ -534,19 +537,19 @@ Source: Excerpt from The Science of Human Nature by William Henry Pyle
 
 41. The author of this passage would most likely agree with which of the following statements?
 
-a. A real botanist focuses more attention on leaves than roots.
-b. A biologist cannot understand how the heart works without knowing how the hand works.
-c. Plants actually are not the main concern of the science of botany.
-d. True scientists are not interested in acquiring knowledge.
+a. A real botanist focuses more attention on leaves than roots.   
+b. A biologist cannot understand how the heart works without knowing how the hand works.   
+c. Plants actually are not the main concern of the science of botany.   
+d. True scientists are not interested in acquiring knowledge.   
 e. Anyone who only studies only Earth's crust is not a real Earth scientist.
 
 42. The passage is primarily concerned with
 
-a. defining the term knowledge.
-b. explaining how scientists must use knowledge.
-c. emphasizing the importance of the whole over the part.
-d. proving that most people who call themselves scientists are frauds.
-e. showing how one becomes a scientist.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p12.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p13.pdf""]"
+a. defining the term knowledge.   
+b. explaining how scientists must use knowledge.   
+c. emphasizing the importance of the whole over the part.   
+d. proving that most people who call themselves scientists are frauds.   
+e. showing how one becomes a scientist."
 "Use the following passage to answer questions 43 and 44.
 
 At the end of the nineteenth century the two masters of the stage were Ibsen and Wagner, and both of them were in the show business—Wagner more openly and more frequently than
@@ -559,10 +562,10 @@ Source: Excerpt from A Book about the Theater by Brander Matthews
 
 43. Which sentence best summarizes the main point of the passage?
 
-a. Ibsen and Wagner may be considered great theater artists, but they were really nothing more than showmen.
-b. The most spectacular moment of Ibsen's play When We Dead Awaken involves an on-stage avalanche.
-c. Wagner considered music-drama to be the art-work of the future because it incorporated numerous other art forms.
-d. Every great theater artist knows that no one would enjoy their plays without spectacular stage effects.
+a. Ibsen and Wagner may be considered great theater artists, but they were really nothing more than showmen.   
+b. The most spectacular moment of Ibsen's play When We Dead Awaken involves an on-stage avalanche.   
+c. Wagner considered music-drama to be the art-work of the future because it incorporated numerous other art forms.   
+d. Every great theater artist knows that no one would enjoy their plays without spectacular stage effects.   
 e. Ibsen and Wagner were both great theater artists but they also understood the value of putting on a spectacular show.
 
 44. Which sentence from the passage represents an opinion rather than a fact?
@@ -575,7 +578,7 @@ c. ""As for Wagner . . . opera.""
 
 d. ""He conformed . . . accompaniment.""
 
-e. ""The forging . . . pantomime.""","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p13.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p14.pdf""]"
+e. ""The forging . . . pantomime."""
 "Use the following passage to answer questions 45 through 49.
 
 Wendel Bollman's name survives today solely in association with the Bollman truss, and even in this respect is known only to a few older civil and railroad engineers. The Bollman system of
@@ -658,7 +661,7 @@ c. a history of developments in railway systems.
 
 d. a railway engineering manual.
 
-e. an essay on the European railway system.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p14.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p15.pdf""]"
+e. an essay on the European railway system."
 "Use the following passage to answer questions 50 through 53.
 
 Gettysburg is the market town—or borough, accurately speaking—of an exclusively farming population, planted in one of the most productive sections of the Keystone State. It is the seat
@@ -717,41 +720,41 @@ e. radiate
 
 53. What was the author's primary purpose in describing Gettysburg?
 
-a. to encourage people to visit Gettysburg
-b. to prove that people actually know very little about Gettysburg
-c. to establish the setting in a discussion of a battle that took place there
-d. to show that people in Gettysburg are very religious
-e. to imply that Gettysburg was a completely unnatural place for a battle","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p15.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p16.pdf""]"
+a. to encourage people to visit Gettysburg   
+b. to prove that people actually know very little about Gettysburg   
+c. to establish the setting in a discussion of a battle that took place there   
+d. to show that people in Gettysburg are very religious   
+e. to imply that Gettysburg was a completely unnatural place for a battle"
 "Use the following passage to answer questions 54 through 56.
 
-Animals below the level of zoophytes and sponges are called Protozoa. The word obviously means “First Animals,” but all that we can say is that the very simplest of them may give us
-5 some hint of the simplicity of the original first animals. For it is quite certain that the vast majority of the Protozoa today are far too complicated to be thought of as primitive. Though most of them are microscopic, each is an ani-
-10 mal complete in itself, with the same fundamental bodily attributes as are manifested in ourselves. They differ from animals of higher degree in not being built up of the unit areas or corpuscles called cells. They have no cells, no
-15 tissues, no organs, in the ordinary acceptance of these words, but many of them show a great complexity of internal structure, far exceeding that of the ordinary cells that build up the tissues of higher animals. They are complete liv-
+Animals below the level of zoophytes and sponges are called Protozoa. The word obviously means “First Animals,” but all that we can say is that the very simplest of them may give us   
+5 some hint of the simplicity of the original first animals. For it is quite certain that the vast majority of the Protozoa today are far too complicated to be thought of as primitive. Though most of them are microscopic, each is an ani-  
+10 mal complete in itself, with the same fundamental bodily attributes as are manifested in ourselves. They differ from animals of higher degree in not being built up of the unit areas or corpuscles called cells. They have no cells, no   
+15 tissues, no organs, in the ordinary acceptance of these words, but many of them show a great complexity of internal structure, far exceeding that of the ordinary cells that build up the tissues of higher animals. They are complete liv-  
 20 ing creatures which have not gone in for body-making.
 
 Source: Excerpt from The Outline of Science, Vol. 1 by J. Arthur Thomson
 
 54. The passage deals mainly with which of the following characteristics of modern protozoa?
 
-a. their primitive nature
-b. their relative complexity
-c. their similarity to humans
-d. their role as the first animals
+a. their primitive nature   
+b. their relative complexity   
+c. their similarity to humans   
+d. their role as the first animals   
 e. their microscopic size
 
 55. Which sentence from the passage best supports the author's argument that protozoa are ""complete living creatures""?
 
-a. ""Animals below the level of zoophytes and sponges are called Protozoa.""
-b. ""The word obviously means 'First Animals,' but all that we can say is that the very simplest of them may give us some hint of the simplicity of the original first animals.""
-c. ""For it is quite certain that the vast majority of the Protozoa today are far too complicated to be thought of as primitive.""
-d. ""They differ from animals of higher degree in not being built up of the unit areas or corpuscles called cells.""
+a. ""Animals below the level of zoophytes and sponges are called Protozoa.""   
+b. ""The word obviously means 'First Animals,' but all that we can say is that the very simplest of them may give us some hint of the simplicity of the original first animals.""   
+c. ""For it is quite certain that the vast majority of the Protozoa today are far too complicated to be thought of as primitive.""   
+d. ""They differ from animals of higher degree in not being built up of the unit areas or corpuscles called cells.""   
 e. ""They have no cells, no tissues, no organs, in the ordinary acceptance of these words, but many of them show a great complexity of internal structure, far exceeding that of the ordinary cells that build up the tissues of higher animals.""
 
 56. Which inference about the complexity of living creatures can be made from the information provided within the passage?
 
-a. Large living things are more complex than smaller ones.
-b. A living thing must have cells, tissues, and organs to be complex.
-c. The size of a living creature has little bearing on its complexity.
-d. No animal without a traditional body can be called complex.
-e. Tiny living creatures tend to be more complex than larger ones.","[""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p16.pdf"", ""/Users/l/klee_code/git_repos/parse_evaluation/splited/praxis_core_pp copy 2_p17.pdf""]"
+a. Large living things are more complex than smaller ones.   
+b. A living thing must have cells, tissues, and organs to be complex.   
+c. The size of a living creature has little bearing on its complexity.   
+d. No animal without a traditional body can be called complex.   
+e. Tiny living creatures tend to be more complex than larger ones."

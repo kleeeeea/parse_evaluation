@@ -1,12 +1,7 @@
 import csv
-import json
 import os
 import re
-from glob import glob
 
-
-
-mineruparsed='/Users/l/klee_code/git_repos/parse_evaluation/eaa0dd7f-206c-485e-82db-2b4b355ff0a9_origin copy (dragged).pdf-aafdc8db-4703-4b3b-809a-eadc8088d856/full.md'
 questionspan_output_csv = '/Users/l/klee_code/git_repos/parse_evaluation/outputs/question_spans.csv'
 individual_question_output_csv = '/Users/l/klee_code/git_repos/parse_evaluation/outputs/individual_questions.csv'
 individual_question_output_columns = [
@@ -21,10 +16,13 @@ individual_question_output_columns = [
 # alongside every question for downstream evaluation.
 
 # A question header looks like a line starting with "<number>. " — e.g. "1. Which ...".
-# Choice labels ("a.", "b.", ...) don't start with digits so they are excluded.
-# Line numbers inside passages ("5 Massachusetts") have no trailing period so they
-# are excluded too.
-QUESTION_HEADER_RE = re.compile(r'^(\d+)\.[ \t]+', re.MULTILINE)
+# - Optional leading horizontal whitespace covers mineru's occasional indentation.
+# - The lookahead for \s (not [ \t]+) lets a stem that wraps to the next line still
+#   anchor on the digit-period.
+# - Choice labels ("a.", "b.", ...) don't start with digits so they are excluded.
+# - In-passage line numbers ("5 Massachusetts") have no trailing period so they
+#   are excluded too.
+QUESTION_HEADER_RE = re.compile(r'^[ \t]*(\d+)\.(?=\s)', re.MULTILINE)
 
 
 def _split_span_into_questions(span_text):
@@ -42,13 +40,13 @@ def _split_span_into_questions(span_text):
     return passage, questions
 
 
-def main():
+def split_consecutive_problem_spans_into_individual_questions(current_questionspan_csv):
     out_dir = os.path.dirname(individual_question_output_csv)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
     rows_in = 0
     rows_out = 0
-    with open(questionspan_output_csv, newline='') as f_in, \
+    with open(current_questionspan_csv, newline='') as f_in, \
             open(individual_question_output_csv, 'w', newline='') as f_out:
         reader = csv.DictReader(f_in)
         writer = csv.DictWriter(f_out, fieldnames=individual_question_output_columns)
@@ -73,4 +71,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    split_consecutive_problem_spans_into_individual_questions(questionspan_output_csv)

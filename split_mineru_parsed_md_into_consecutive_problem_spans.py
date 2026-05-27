@@ -8,7 +8,7 @@ from glob import glob
 
 mineruparsed='/Users/l/klee_code/git_repos/parse_evaluation/eaa0dd7f-206c-485e-82db-2b4b355ff0a9_origin copy (dragged).pdf-aafdc8db-4703-4b3b-809a-eadc8088d856/full.md'
 questionspan_output_csv = '/Users/l/klee_code/git_repos/parse_evaluation/outputs/question_spans.csv'
-output_csv_columns = ['spans', 'original_page_screenshot_paths']
+output_csv_columns = ['spans']
 original_page_screenshot_path_root = '/Users/l/klee_code/git_repos/parse_evaluation/splited'
 # example:
 sample_questions_that_should_be_in_the_same_span_because_they_refer_to_the_same_passage = """
@@ -40,142 +40,73 @@ e. help the reader understand the differences between two-cylinder vehicles and 
 SPAN_TRIGGER_RE = re.compile(r'^\s*Use the following passage', re.IGNORECASE)
 # text_level=1 items that should stay inside a span (passage/source sub-labels)
 IN_SPAN_TOP_LEVEL_RE = re.compile(r'^\s*(Passage|Source)\s+\d+\s*$', re.IGNORECASE)
+# Top-level markdown headers — used as section boundaries unless the header
+# text itself is a Passage/Source sub-label.
+TOP_LEVEL_HEADER_RE = re.compile(r'^#\s+(.*)$')
+# A top-level header that contains this phrase marks the start of the answer
+# key — no more problems can appear after it, so we stop walking the file.
+END_OF_PROBLEMS_RE = re.compile(r'Answers and Explanations', re.IGNORECASE)
 
 
-def _is_section_break(item):
-    if item.get('type') != 'text':
-        return False
-    if item.get('text_level') != 1:
-        return False
-    text = (item.get('text') or '').strip()
-    return bool(text) and not IN_SPAN_TOP_LEVEL_RE.match(text)
+def _split_markdown_into_spans(md_text):
+    """Walk the markdown line by line.
 
+    A new span begins at any line matching SPAN_TRIGGER_RE. The current span
+    ends either:
+      - at the start of the next trigger, or
+      - at a top-level markdown header (`# ...`) whose text is NOT a
+        Passage/Source sub-label (those stay inside the span).
 
-def _find_content_list(root_dir):
-    candidates = glob(os.path.join(root_dir, '*_content_list.json'))
-    # prefer the non-v2 file (matches the original full.md layout)
-    primary = [p for p in candidates if not p.endswith('_v2.json')]
-    chosen = primary[0] if primary else candidates[0]
-    with open(chosen) as f:
-        return json.load(f)
-
-
-def _page_idx_to_pdf_path(page_idx):
-    # splited PDFs are 1-indexed: page_idx 0 -> _p01.pdf
-    filename = f'praxis_core_pp copy 2_p{page_idx + 1:02d}.pdf'
-    return os.path.join(original_page_screenshot_path_root, filename)
-
-
-def _render_item(item):
-    t = item.get('type')
-    if t == 'page_number':
-        return ''
-    if t == 'header':
-        # running page header — strip; it repeats on every page
-        return ''
-    if t == 'text':
-        text = (item.get('text') or '').strip()
-        if not text:
-            return ''
-        level = item.get('text_level')
-        if level:
-            return f'{"#" * level} {text}'
-        return text
-    if t == 'list':
-        items = item.get('list_items') or []
-        return '\n'.join(s.strip() for s in items if s and s.strip())
-    if t == 'equation':
-        return (item.get('text') or '').strip()
-    if t == 'table':
-        parts = []
-        for cap in item.get('table_caption') or []:
-            cap = cap.strip()
-            if cap:
-                parts.append(cap)
-        body = (item.get('table_body') or '').strip()
-        if body:
-            parts.append(body)
-        for fn in item.get('table_footnote') or []:
-            fn = fn.strip()
-            if fn:
-                parts.append(fn)
-        return '\n'.join(parts)
-    if t in ('image', 'chart'):
-        img = item.get('img_path') or ''
-        caption_key = 'image_caption' if t == 'image' else 'chart_caption'
-        footnote_key = 'image_footnote' if t == 'image' else 'chart_footnote'
-        parts = []
-        for cap in item.get(caption_key) or []:
-            cap = cap.strip()
-            if cap:
-                parts.append(cap)
-        if img:
-            parts.append(f'![]({img})')
-        content = (item.get('content') or '').strip()
-        if content:
-            parts.append(content)
-        for fn in item.get(footnote_key) or []:
-            fn = fn.strip()
-            if fn:
-                parts.append(fn)
-        return '\n'.join(parts)
-    return ''
-
-
-def _split_into_spans(items):
+    Lines before the first trigger (cover page, "Time: 85 Minutes", etc.) are
+    discarded.
+    """
     spans = []
-    current_items = None
-    for item in items:
-        if item.get('type') == 'text' and SPAN_TRIGGER_RE.match(item.get('text') or ''):
-            if current_items:
-                spans.append(current_items)
-            current_items = [item]
-        elif current_items is not None:
-            if _is_section_break(item):
-                spans.append(current_items)
-                current_items = None
-            else:
-                current_items.append(item)
-    if current_items:
-        spans.append(current_items)
-    return spans
+    current_lines = None
+    for line in md_text.splitlines():
+        header_match = TOP_LEVEL_HEADER_RE.match(line)
+        # The "Answers and Explanations" header marks the end of all problems
+        # for this test — and any later top-level section (Writing Test, Math
+        # Test, …) is not a problem section either, so we stop entirely.
+        # Example line that triggers this:
+        #   '# Praxis® Core Academic Skills for Educators: Reading Practice Test 1 Answers and Explanations'
+        if header_match and END_OF_PROBLEMS_RE.search(header_match.group(1)):
+            if current_lines is not None:
+                spans.append('\n'.join(current_lines).strip())
+                current_lines = None
+            break
+        if SPAN_TRIGGER_RE.match(line):
+            if current_lines is not None:
+                spans.append('\n'.join(current_lines).strip())
+            current_lines = [line]
+            continue
+        if current_lines is None:
+            continue
+        if header_match and not IN_SPAN_TOP_LEVEL_RE.match(header_match.group(1)):
+            # New top-level section — close the current span and stop collecting
+            # until the next trigger.
+            spans.append('\n'.join(current_lines).strip())
+            current_lines = None
+            continue
+        current_lines.append(line)
+    if current_lines is not None:
+        spans.append('\n'.join(current_lines).strip())
+    return [s for s in spans if s]
 
 
-def _serialize_span(span_items):
-    rendered = []
-    pages_seen = []
-    seen = set()
-    for item in span_items:
-        page_idx = item.get('page_idx')
-        if page_idx is not None and page_idx not in seen:
-            seen.add(page_idx)
-            pages_seen.append(page_idx)
-        chunk = _render_item(item)
-        if chunk:
-            rendered.append(chunk)
-    text = '\n\n'.join(rendered).strip()
-    pdf_paths = [_page_idx_to_pdf_path(p) for p in sorted(pages_seen)]
-    return text, pdf_paths
-
-
-def main():
-    root_dir = os.path.dirname(mineruparsed)
-    items = _find_content_list(root_dir)
-    spans = _split_into_spans(items)
+def split_mineru_parsed_md_into_consecutive_problem_spans(current_mineruparsed):
+    with open(current_mineruparsed) as f:
+        md_text = f.read()
+    spans = _split_markdown_into_spans(md_text)
     out_dir = os.path.dirname(questionspan_output_csv)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
     with open(questionspan_output_csv, 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(output_csv_columns)
-        for span_items in spans:
-            text, pdf_paths = _serialize_span(span_items)
-            if not text:
-                continue
-            writer.writerow([text, json.dumps(pdf_paths)])
+        for span_text in spans:
+            writer.writerow([span_text])
     print(f'wrote {len(spans)} spans to {questionspan_output_csv}')
 
 
-
 if __name__ == '__main__':
-    main()
+    split_mineru_parsed_md_into_consecutive_problem_spans(mineruparsed)
