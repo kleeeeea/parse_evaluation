@@ -1,0 +1,14 @@
+{
+  "thinking": {
+    "type": "disabled"
+  },
+  "temperature": 0.1,
+  "stream": true,
+  "system_input": null,
+  "max_tokens": null,
+  "disable_maxtoken_hint": false,
+  "api_key": "sk-yJdHSUrrZNYkBS5f5dHOPgoxRw5Q8qRJPFTbKh6jOqnAUZNF",
+  "base_url": "https://api.innospark.cn/v1",
+  "model": "gemini-2.5-flash",
+  "timeout": null
+}

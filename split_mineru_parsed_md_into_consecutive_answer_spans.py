@@ -1,57 +1,37 @@
 import csv
-import json
 import os
 import re
-from glob import glob
 
 from git_repos.parse_evaluation.split_consecutive_problem_spans_into_individual_questions import individual_question_output_csv
 from git_repos.parse_evaluation.split_mineru_parsed_md_into_consecutive_problem_spans import mineruparsed
 
 answerspan_output_csv = '/Users/l/klee_code/git_repos/parse_evaluation/outputs/answer_spans.csv'
-answerspan_output_columns = ['question_number', 'answer', 'original_page_screenshot_paths']
-original_page_screenshot_path_root = '/Users/l/klee_code/git_repos/parse_evaluation/splited'
+answerspan_output_columns = ['question_number', 'answer']
 
-# A numbered answer line looks like "1. d. Only choice d ..." — i.e. starts with
-# "<digits>. " at the start of a string. The same regex matches both standalone
-# text items and individual list_items.
-ANSWER_HEADER_RE = re.compile(r'^\s*(\d+)\.\s+')
+# A numbered-answer line — e.g. "1. d. Only choice d ..." or "50. $\\frac{...}$".
+# Optional leading whitespace covers mineru's occasional indentation.
+ANSWER_HEADER_RE = re.compile(r'^[ \t]*(\d+)\.\s')
 
-# text_level=1 items that should stay inside the answer section instead of ending it
+# Top-level markdown headers — used as section boundaries.
+TOP_LEVEL_HEADER_RE = re.compile(r'^#\s+(.*)$')
+# Sub-labels that may appear inside an answer section and should NOT end it.
 IN_SECTION_TOP_LEVEL_RE = re.compile(r'^\s*(Passage|Source)\s+\d+\s*$', re.IGNORECASE)
-ANSWERS_SECTION_MARKER = 'Answers and Explanations'
+# A top-level header that contains this phrase opens the answer section.
+ANSWERS_SECTION_MARKER_RE = re.compile(r'Answers and Explanations', re.IGNORECASE)
 
 
-def _find_content_list(root_dir):
-    candidates = glob(os.path.join(root_dir, '*_content_list.json'))
-    # prefer the non-v2 file (matches the original full.md layout)
-    primary = [p for p in candidates if not p.endswith('_v2.json')]
-    chosen = primary[0] if primary else candidates[0]
-    with open(chosen) as f:
-        return json.load(f)
+def _split_markdown_into_answer_spans(md_text):
+    """Walk the markdown line by line.
 
+    Enters "answer mode" at any top-level header (`# …`) whose text contains
+    "Answers and Explanations". While in answer mode:
+      - a line matching ANSWER_HEADER_RE starts a new numbered-answer span,
+      - every subsequent line is appended to the current span,
+      - a top-level header that is NOT a Passage/Source sub-label closes the
+        current span and exits answer mode (the next test section starts).
 
-def _page_idx_to_pdf_path(page_idx):
-    filename = f'praxis_core_pp copy 2_p{page_idx + 1:02d}.pdf'
-    return os.path.join(original_page_screenshot_path_root, filename)
-
-
-def _append_to_current(current, chunk, page_idx):
-    if chunk:
-        current['parts'].append(chunk)
-    if page_idx is not None and page_idx not in current['pages']:
-        current['pages'].append(page_idx)
-
-
-def _split_into_answer_spans(items):
-    """Walk content_list items and emit one span per numbered answer.
-
-    Enters "answer mode" at a text_level=1 heading containing
-    "Answers and Explanations" and stays there until another top-level heading
-    (other than the Passage/Source sub-labels) is encountered. Numbered answers
-    can appear either as standalone text items ("1. d. ...") or packed into
-    list items (each list_item is itself a numbered answer).
+    Lines outside answer mode are discarded.
     """
-    in_answers = False
     spans = []
     current = None
 
@@ -61,78 +41,43 @@ def _split_into_answer_spans(items):
             spans.append(current)
             current = None
 
-    for item in items:
-        # Section bookkeeping
-        if item.get('type') == 'text' and item.get('text_level') == 1:
-            text = (item.get('text') or '').strip()
-            if ANSWERS_SECTION_MARKER in text:
+    in_answers = False
+    for line in md_text.splitlines():
+        header_match = TOP_LEVEL_HEADER_RE.match(line)
+        if header_match:
+            header_text = header_match.group(1).strip()
+            if ANSWERS_SECTION_MARKER_RE.search(header_text):
+                # Start of (or re-entry into) an answer section.
                 _flush()
                 in_answers = True
                 continue
-            if in_answers and text and not IN_SECTION_TOP_LEVEL_RE.match(text):
-                # Hit a different section (e.g. the next test) — leave answer mode.
+            if in_answers and not IN_SECTION_TOP_LEVEL_RE.match(header_text):
+                # New top-level section (next test, etc.) — leave answer mode.
                 _flush()
                 in_answers = False
                 continue
-
+            # Otherwise it's a Passage/Source sub-label inside the answers — fall
+            # through and let the line be appended to the current answer.
         if not in_answers:
             continue
-
-        t = item.get('type')
-        if t in ('header', 'page_number'):
-            continue
-
-        page_idx = item.get('page_idx')
-
-        if t == 'text':
-            text = (item.get('text') or '').strip()
-            if not text:
-                continue
-            m = ANSWER_HEADER_RE.match(text)
-            if m:
-                _flush()
-                current = {'num': int(m.group(1)), 'parts': [text], 'pages': [page_idx]}
-            elif current is not None:
-                _append_to_current(current, text, page_idx)
-        elif t == 'list':
-            for li in item.get('list_items') or []:
-                li = (li or '').strip()
-                if not li:
-                    continue
-                m = ANSWER_HEADER_RE.match(li)
-                if m:
-                    _flush()
-                    current = {'num': int(m.group(1)), 'parts': [li], 'pages': [page_idx]}
-                elif current is not None:
-                    _append_to_current(current, li, page_idx)
-        elif t == 'equation':
-            if current is not None:
-                _append_to_current(current, (item.get('text') or '').strip(), page_idx)
-        elif t == 'table':
-            if current is not None:
-                body = (item.get('table_body') or '').strip()
-                _append_to_current(current, body, page_idx)
-        elif t in ('image', 'chart'):
-            if current is not None:
-                img = item.get('img_path') or ''
-                if img:
-                    _append_to_current(current, f'![]({img})', page_idx)
-
+        m = ANSWER_HEADER_RE.match(line)
+        if m:
+            _flush()
+            current = {'num': int(m.group(1)), 'lines': [line]}
+        elif current is not None:
+            current['lines'].append(line)
     _flush()
     return spans
 
 
 def _serialize_span(span):
-    text = '\n\n'.join(p for p in span['parts'] if p).strip()
-    pages = sorted(p for p in span['pages'] if p is not None)
-    pdf_paths = [_page_idx_to_pdf_path(p) for p in pages]
-    return text, pdf_paths
+    return '\n'.join(span['lines']).strip()
 
 
 def split_mineru_parsed_md_into_consecutive_answer_spans(current_mineruparsed):
-    root_dir = os.path.dirname(current_mineruparsed)
-    items = _find_content_list(root_dir)
-    spans = _split_into_answer_spans(items)
+    with open(current_mineruparsed) as f:
+        md_text = f.read()
+    spans = _split_markdown_into_answer_spans(md_text)
 
     # Deduplicate by question_number, keeping the first occurrence.
     seen = set()
@@ -151,11 +96,9 @@ def split_mineru_parsed_md_into_consecutive_answer_spans(current_mineruparsed):
         writer = csv.DictWriter(f, fieldnames=answerspan_output_columns)
         writer.writeheader()
         for s in deduped:
-            text, pdf_paths = _serialize_span(s)
             writer.writerow({
                 'question_number': s['num'],
-                'answer': text,
-                'original_page_screenshot_paths': json.dumps(pdf_paths),
+                'answer': _serialize_span(s),
             })
 
     # Cross-check against the individual questions, if that file exists.

@@ -23,15 +23,26 @@ def fmt_template(row: dict) -> str:
     text + source citation) and the question block (stem + a–e choices), so
     we just stitch them together with the answer-format instruction.
     """
-    lines = [row['passage'], "", row['question'], "", "请直接给出答案字母（如：A 或 AB），不需要解释。"]
+    lines = [
+        row['passage'],
+        "",
+        row['question'],
+        "",
+        "Answer with the letter(s) only (e.g., A or AB). No explanation needed.",
+    ]
     return "\n".join(lines)
 
 
 prompts_output_csv = '/Users/l/klee_code/git_repos/parse_evaluation/outputs/prompts.csv'
+# keep the original metadata columns — prompts.csv is a superset of the joined
+# CSV with the derived `id` and `prompt` fields added on top.
 prompts_output_columns = [
     'id',
+    'question_number',
+    'passage',
+    'question',
+    'answer',
     'prompt',
-    'expected_answer',
     'question_page_screenshot_paths',
     'answer_page_screenshot_paths',
 ]
@@ -44,11 +55,9 @@ with open(joined_output_csv, newline='') as _f_in, open(prompts_output_csv, 'w',
     _writer.writeheader()
     for _row in _reader:
         _writer.writerow({
+            **_row,
             'id': f"q{int(_row['question_number']):03d}",
             'prompt': fmt_template(_row),
-            'expected_answer': _row['answer'],
-            'question_page_screenshot_paths': _row['question_page_screenshot_paths'],
-            'answer_page_screenshot_paths': _row['answer_page_screenshot_paths'],
         })
         _rows_written += 1
 print(f'wrote {_rows_written} prompts to {prompts_output_csv}')

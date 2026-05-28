@@ -1,0 +1,19 @@
+{
+  "thinking": {
+    "type": "disabled"
+  },
+  "temperature": 0.1,
+  "stream": true,
+  "system_input": "Reasoning effort should be low. Maxmium tokens for reasoning or thinking can not be more than 100 tokens.",
+  "max_tokens": 12000,
+  "disable_maxtoken_hint": 1,
+  "api": {
+    "base_url": "https://hocph9c5dmdjcpmhjqg58keda89joeoc.openapi-qb.sii.edu.cn/v1",
+    "api_key": "QF8XqjmZhi9sygq1MT9Nr0rk8xZzVlid/aLvCRurzWw=",
+    "model": "Qwen3-32B-ceval"
+  },
+  "api_key": "QF8XqjmZhi9sygq1MT9Nr0rk8xZzVlid/aLvCRurzWw=",
+  "base_url": "https://hocph9c5dmdjcpmhjqg58keda89joeoc.openapi-qb.sii.edu.cn/v1",
+  "model": "Qwen3-32B-ceval",
+  "timeout": 60.0
+}
