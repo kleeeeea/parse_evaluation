@@ -3,7 +3,7 @@ import os
 import re
 from dataclasses import asdict
 
-from dataclass_ import AnswerSpanRow, columns
+from dataclass_ import AnswerSpanRow, ProblemAndAnswerRow, columns
 from exam_formats import PRAXIS_READING, ExamFormat
 from stage import Stage
 from tests.fixture._constants import mineruparsed
@@ -15,6 +15,8 @@ from _2_split_question_main_body_into_consecutive_problem_spans import (
 
 answerspan_output_csv_basename = 'answer_spans.csv'
 answerspan_output_columns = columns(AnswerSpanRow)
+joined_output_csv_basename = 'problems_and_answers.csv'
+joined_output_columns = columns(ProblemAndAnswerRow)
 
 # 一条答案的起始行由 exam_format.answer_header_re 决定：
 # praxis: "1. d. Only choice d …"；plt 短答题: "## 1. Sample Response …"。
@@ -71,19 +73,87 @@ def _serialize_span(span):
     return '\n'.join(span['lines']).strip()
 
 
+def _load_by_question_number(csv_path):
+    rows = {}
+    with open(csv_path, newline='') as f:
+        for row in csv.DictReader(f):
+            try:
+                rows[int(row['question_number'])] = row
+            except (KeyError, TypeError, ValueError):
+                continue
+    return rows
+
+
+def _write_joined_output(individual_question_csv, answerspan_csv):
+    questions = _load_by_question_number(individual_question_csv)
+    answers = _load_by_question_number(answerspan_csv)
+    all_qnums = sorted(set(questions) | set(answers))
+    output_path = os.path.join(
+        os.path.dirname(os.path.abspath(individual_question_csv)),
+        joined_output_csv_basename,
+    )
+
+    with open(output_path, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=joined_output_columns)
+        writer.writeheader()
+        for qnum in all_qnums:
+            question = questions.get(qnum) or {}
+            answer = answers.get(qnum) or {}
+            writer.writerow(asdict(ProblemAndAnswerRow(
+                question_number=str(qnum),
+                passage=question.get('passage', ''),
+                question=question.get('question', ''),
+                answer=answer.get('answer', ''),
+                question_page_screenshot_paths=question.get(
+                    'original_page_screenshot_paths', ''),
+                answer_page_screenshot_paths=answer.get(
+                    'original_page_screenshot_paths', ''),
+            )))
+
+    missing_answers = sorted(set(questions) - set(answers))
+    missing_questions = sorted(set(answers) - set(questions))
+    print(f'wrote {len(all_qnums)} joined rows to {output_path}')
+    if missing_answers:
+        print(f'  questions without a matching answer: {missing_answers}')
+    if missing_questions:
+        print(f'  answers without a matching question: {missing_questions}')
+    return output_path
+
+
 class SplitMineruParsedMdIntoAnswerSpansStage(Stage):
     # …/{mineru任务目录}/full.md -> …/{mineru任务目录}/answer_spans.csv
     output_basename = answerspan_output_csv_basename
 
-    def _produce(self, output_path, current_mineruparsed):
+    def run(self, current_mineruparsed, individual_question_output_csv=None):
+        output_path = super().run(
+            current_mineruparsed, individual_question_output_csv)
+        if individual_question_output_csv and os.path.exists(
+                individual_question_output_csv):
+            joined_output_path = os.path.join(
+                os.path.dirname(os.path.abspath(
+                    individual_question_output_csv)),
+                joined_output_csv_basename,
+            )
+            if not os.path.exists(joined_output_path):
+                _write_joined_output(
+                    individual_question_output_csv, output_path)
+        return output_path
+
+    def _produce(
+            self, output_path, current_mineruparsed,
+            individual_question_output_csv=None):
         with open(current_mineruparsed) as f:
             md_text = f.read()
 
         # 先读题目集合（若已产出）：既用于答案号上界（1..题目数量），也用于交叉核对。
-        # 从输入 md 沿 _1_ -> _2_ 的 derive 链动态推导 individual_questions.csv 的路径
+        # 兼容旧的单输入调用：未显式传入时沿 _1_ -> _2_ 的 derive 链推导。
         expected = set()
-        individual_question_output_csv = SplitQuestionMainbodyIntoIndividualQuestionsStage().derive_output_path(
-            GetQuestionsMainbodyStage().derive_output_path(current_mineruparsed))
+        if individual_question_output_csv is None:
+            individual_question_output_csv = (
+                SplitQuestionMainbodyIntoIndividualQuestionsStage()
+                .derive_output_path(
+                    GetQuestionsMainbodyStage().derive_output_path(
+                        current_mineruparsed)))
         if os.path.exists(individual_question_output_csv):
             with open(individual_question_output_csv) as f:
                 for row in csv.DictReader(f):
@@ -95,20 +165,13 @@ class SplitMineruParsedMdIntoAnswerSpansStage(Stage):
         spans = _split_markdown_into_answer_spans(
             md_text, self.exam_format, expected_end_num=len(expected) or None)
 
-        # split_into_items 已保证答案号严格递增唯一；dedup/sort 留作防御性兜底。
-        seen = set()
-        deduped = []
-        for s in spans:
-            if s['num'] in seen:
-                continue
-            seen.add(s['num'])
-            deduped.append(s)
-        deduped.sort(key=lambda s: s['num'])
+        # split_into_items 已保证答案号严格递增且唯一。
+        seen = {span['num'] for span in spans}
 
         with open(output_path, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=answerspan_output_columns)
             writer.writeheader()
-            for s in deduped:
+            for s in spans:
                 writer.writerow(asdict(AnswerSpanRow(
                     question_number=str(s['num']),
                     answer=_serialize_span(s),
@@ -116,11 +179,13 @@ class SplitMineruParsedMdIntoAnswerSpansStage(Stage):
 
         missing = sorted(expected - seen)
         extra = sorted(seen - expected) if expected else []
-        print(f'wrote {len(deduped)} answer spans to {output_path}')
+        print(f'wrote {len(spans)} answer spans to {output_path}')
         if missing:
             print(f'  missing answers for questions: {missing}')
         if extra:
             print(f'  extra answers not in individual_questions.csv: {extra}')
+        if os.path.exists(individual_question_output_csv):
+            _write_joined_output(individual_question_output_csv, output_path)
 
 
 if __name__ == '__main__':
