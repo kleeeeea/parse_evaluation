@@ -1,14 +1,14 @@
 import csv
-import os
-import re
-from re import Match
-
-questions_mainbody_markdown_text = f'{os.environ['HOME']}/klee_code/git_repos/llm_evals/parse_evaluation/praxis_reading_1/outputs/questions_mainbody.md'
 from dataclasses import asdict
 
-from dataclass_ import QuestionSpanRow, columns
-from exam_formats import PRAXIS_READING, ExamFormat, question_number_match
+from _1_get_questions_mainbody import GetQuestionsMainbodyStage
+from dataclass_ import QuestionSpanRow
+from dataclass_ import columns
+from exam_formats import ExamFormat
+from exam_formats import PRAXIS_READING
+from exam_formats import question_number_match
 from stage import Stage
+from tests.fixture._constants import mineruparsed
 
 questionspan_output_csv_basename = 'question_spans.csv'
 output_csv_columns = columns(QuestionSpanRow)
@@ -131,4 +131,6 @@ class SplitQuestionMainbodyIntoSpansStage(Stage):
         print(f'wrote {len(spans)} spans to {output_path}')
 
 if __name__ == '__main__':
-    SplitQuestionMainbodyIntoSpansStage().run(questions_mainbody_markdown_text)
+    # 从 fixture 的输入 md 沿 _1_ 的 derive 推出 questions_mainbody.md
+    SplitQuestionMainbodyIntoSpansStage().run(
+        GetQuestionsMainbodyStage().derive_output_path(mineruparsed))

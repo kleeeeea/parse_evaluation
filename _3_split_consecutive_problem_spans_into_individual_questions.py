@@ -1,12 +1,15 @@
 import csv
 import os
-questionspan_output_csv = f'{os.environ['HOME']}/klee_code/git_repos/llm_evals/parse_evaluation/praxis_reading_1/outputs/question_spans.csv'
-individual_question_output_csv_basename = 'individual_questions.csv'
 from dataclasses import asdict
 
 from dataclass_ import IndividualQuestionRow, columns
 from exam_formats import PRAXIS_READING, ExamFormat, question_number_match
 from stage import Stage
+from _1_get_questions_mainbody import GetQuestionsMainbodyStage
+from _2_split_question_main_body_into_consecutive_problem_spans import SplitQuestionMainbodyIntoSpansStage
+from tests.fixture._constants import mineruparsed
+
+individual_question_output_csv_basename = 'individual_questions.csv'
 
 individual_question_output_columns = columns(IndividualQuestionRow)
 
@@ -72,4 +75,7 @@ class SplitSpansIntoIndividualQuestionsStage(Stage):
         print(f'read {rows_in} spans, wrote {rows_out} questions to {output_path}')
 
 if __name__ == '__main__':
-    SplitSpansIntoIndividualQuestionsStage().run(questionspan_output_csv)
+    # 从 fixture 的输入 md 沿 _1_ -> _2_ 的 derive 链推出 question_spans.csv
+    SplitSpansIntoIndividualQuestionsStage().run(
+        SplitQuestionMainbodyIntoSpansStage().derive_output_path(
+            GetQuestionsMainbodyStage().derive_output_path(mineruparsed)))
