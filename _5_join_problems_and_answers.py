@@ -8,7 +8,7 @@ from tests.fixture._constants import mineruparsed
 from _1_get_questions_mainbody import GetQuestionsMainbodyStage
 from _2_split_question_main_body_into_consecutive_problem_spans import SplitQuestionMainbodyIntoSpansStage
 from _3_split_consecutive_problem_spans_into_individual_questions import SplitSpansIntoIndividualQuestionsStage
-from _4_split_mineru_parsed_md_into_consecutive_answer_spans import derive_answerspan_output_csv
+from _4_split_mineru_parsed_md_into_consecutive_answer_spans import SplitMineruParsedMdIntoAnswerSpansStage
 
 joined_output_csv_basename = 'problems_and_answers.csv'
 joined_output_columns = columns(ProblemAndAnswerRow)
@@ -70,22 +70,12 @@ class JoinProblemsAndAnswersStage(Stage):
             print(f'  answers without a matching question: {missing_questions}')
 
 
-# 保留模块级函数作为薄包装，下游调用方式不变
-def derive_joined_output_csv(current_individual_question_csv):
-    return JoinProblemsAndAnswersStage().derive_output_path(current_individual_question_csv)
-
-
-def join_problems_and_answers(current_individual_question_csv, current_answerspan_csv, skip_if_output_exists=True) -> str:
-    return JoinProblemsAndAnswersStage(skip_if_output_exists=skip_if_output_exists).run(
-        current_individual_question_csv, current_answerspan_csv)
-
-
 if __name__ == '__main__':
     # 题目侧沿 _1_ -> _2_ -> _3_ 的 derive 链从输入 md 动态推导；
     # 答案侧用 _4_ 的 derive
     individual_question_output_csv = SplitSpansIntoIndividualQuestionsStage().derive_output_path(
         SplitQuestionMainbodyIntoSpansStage().derive_output_path(
             GetQuestionsMainbodyStage().derive_output_path(mineruparsed)))
-    join_problems_and_answers(
+    JoinProblemsAndAnswersStage().run(
         individual_question_output_csv,
-        derive_answerspan_output_csv(mineruparsed))
+        SplitMineruParsedMdIntoAnswerSpansStage().derive_output_path(mineruparsed))

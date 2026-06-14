@@ -130,16 +130,5 @@ class SplitMineruParsedMdIntoAnswerSpansStage(Stage):
             print(f'  extra answers not in individual_questions.csv: {extra}')
 
 
-# 保留模块级函数作为薄包装，下游调用方式不变
-def derive_answerspan_output_csv(current_mineruparsed):
-    return SplitMineruParsedMdIntoAnswerSpansStage().derive_output_path(current_mineruparsed)
-
-
-def split_mineru_parsed_md_into_consecutive_answer_spans(current_mineruparsed, exam_format: ExamFormat = PRAXIS_READING, skip_if_output_exists=True) -> str:
-    return SplitMineruParsedMdIntoAnswerSpansStage(
-        exam_format=exam_format, skip_if_output_exists=skip_if_output_exists,
-    ).run(current_mineruparsed)
-
-
 if __name__ == '__main__':
-    split_mineru_parsed_md_into_consecutive_answer_spans(mineruparsed)
+    SplitMineruParsedMdIntoAnswerSpansStage().run(mineruparsed)

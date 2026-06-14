@@ -13,9 +13,9 @@ from _3_split_consecutive_problem_spans_into_individual_questions import (
     SplitSpansIntoIndividualQuestionsStage,
 )
 from _4_split_mineru_parsed_md_into_consecutive_answer_spans import (
-    split_mineru_parsed_md_into_consecutive_answer_spans,
+    SplitMineruParsedMdIntoAnswerSpansStage,
 )
-from _5_join_problems_and_answers import join_problems_and_answers
+from _5_join_problems_and_answers import JoinProblemsAndAnswersStage
 from tests.fixture._constants import mineruparsed
 
 
@@ -28,8 +28,8 @@ def run_pipeline(question_input_document: str, answer_input_document: str, exam_
     questions_mainbody_md = GetQuestionsMainbodyStage(exam_format=exam_format).run(question_input_document)
     questionspan_csv = SplitQuestionMainbodyIntoSpansStage(exam_format=exam_format).run(questions_mainbody_md)
     individual_question_csv = SplitSpansIntoIndividualQuestionsStage(exam_format=exam_format).run(questionspan_csv)
-    answerspan_csv = split_mineru_parsed_md_into_consecutive_answer_spans(answer_input_document, exam_format=exam_format)
-    joined_output_csv = join_problems_and_answers(individual_question_csv, answerspan_csv)
+    answerspan_csv = SplitMineruParsedMdIntoAnswerSpansStage(exam_format=exam_format).run(answer_input_document)
+    joined_output_csv = JoinProblemsAndAnswersStage().run(individual_question_csv, answerspan_csv)
 
     # prompts.csv 与 joined 输出同目录
     prompts_output_csv = os.path.join(os.path.dirname(joined_output_csv), 'prompts.csv')
