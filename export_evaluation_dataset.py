@@ -37,6 +37,7 @@ class EvaluationRecord:
     type: str # question type, e.g. multi-choice question, constructed response question
     language: str # e.g. ch, en
     source_exam: str # url of the origin edam
+    source_exam_pdf: str # url of the origin pdf file to cross check
     has_image: bool
     options: dict[str, str] | None # optional field for the choices of the multi-choice question
 
