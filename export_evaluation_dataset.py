@@ -30,14 +30,15 @@ class EvaluationRecord:
     id: str
     question: str
     answer: str
+    passage: str | None # needed for questions that refer to contexts!
     explanation: str #
     module: str # e.g. subject 1, plt
     subject: str # e.g. writing, math, biology
     type: str # question type, e.g. multi-choice question, constructed response question
     language: str # e.g. ch, en
     source_exam: str # url of the origin edam
-    options: dict[str, str] | None # optional field for the choices of the multi-choice question
     has_image: bool
+    options: dict[str, str] | None # optional field for the choices of the multi-choice question
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "EvaluationRecord":
