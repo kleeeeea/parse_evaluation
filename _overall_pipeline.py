@@ -70,6 +70,9 @@ def run_parse_evaluation_pipeline(
     if answer_input_document is None:
         answer_input_document = _infer_answer_input_document(
             question_input_document)
+    # 允许传入卷型「类」（如 PLT），统一实例化——下游按实例方法调用 exam_format
+    if isinstance(exam_format, type):
+        exam_format = exam_format()
     if exam_format is None:
         exam_format = (
             EXAM_FORMAT_BY_NAME[exam_format_str] if exam_format_str else None

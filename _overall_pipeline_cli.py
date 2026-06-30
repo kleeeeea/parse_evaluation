@@ -42,6 +42,7 @@ def main(argv=None):
     args = parse_args(argv)
     question_input_document = args.question_input_document or mineruparsed
     answer_input_document = args.answer_input_document or mineruparsed
+    from parse_evaluation.exam_formats import EXAM_FORMAT_BY_NAME
     exam_format = (
         EXAM_FORMAT_BY_NAME[args.exam_format] if args.exam_format else None
     )

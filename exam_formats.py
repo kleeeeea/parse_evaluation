@@ -120,16 +120,18 @@ class ExamFormat:
             if match:
                 first_q = int(match.group(1))
                 last_q = int(match.group(2) or match.group(1))
-                return last_q
+                return first_q, last_q
         return None
 
 
+@dataclass(frozen=True)
 class PraxisReading(ExamFormat):
-    name = 'praxis_reading'
+    name: str = 'praxis_reading'
 
 
+@dataclass(frozen=True)
 class PLT(ExamFormat):
-    name = 'plt'
+    name: str = 'plt'
 
 
 # 已知卷型登记表；get_exam_format 按内容在其中择一。新增卷型加到这里即可。

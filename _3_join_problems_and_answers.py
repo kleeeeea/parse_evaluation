@@ -1,29 +1,16 @@
-import csv
-from dataclasses import asdict
+import os
 
 from _1_get_questions_mainbody import GetQuestionsMainbodyStage
+from dataclass_ import AnswerSpanRow
+from dataclass_ import EvaluationRecord
+from dataclass_ import IndividualQuestionRow
 from dataclass_ import ProblemAndAnswerRow
 from dataclass_ import PipelineStageRunnerWithOutput
-from dataclass_ import columns
 from parse_evaluation._1_parse_answers import SplitMineruParsedMdIntoAnswerSpansStage
 from parse_evaluation._2_parse_questions import SplitQuestionMainbodyIntoIndividualQuestionsStage
 from tests.fixture._constants import mineruparsed
 
 joined_output_csv_basename = 'problems_and_answers.csv'
-joined_output_columns = columns(ProblemAndAnswerRow)
-
-
-def _load_by_question_number(csv_path):
-    """Load a CSV keyed by integer question_number."""
-    by_q = {}
-    with open(csv_path, newline='') as f:
-        for row in csv.DictReader(f):
-            try:
-                qnum = int(row['question_number'])
-            except (KeyError, TypeError, ValueError):
-                continue
-            by_q[qnum] = row
-    return by_q
 
 
 
@@ -88,28 +75,46 @@ class JoinProblemsAndAnswersStage(PipelineStageRunnerWithOutput):
     output_basename = joined_output_csv_basename
 
     def _produce(self, output_path, current_individual_question_csv, current_answerspan_csv):
-        questions = _load_by_question_number(current_individual_question_csv)
-        answers = _load_by_question_number(current_answerspan_csv)
+        questions = IndividualQuestionRow.read_by_question_number(
+                current_individual_question_csv)
+        answers = AnswerSpanRow.read_by_question_number(current_answerspan_csv)
         all_qnums = sorted(set(questions) | set(answers))
 
-        with open(output_path, 'w', newline='') as f:
-            writer = csv.DictWriter(f, fieldnames=joined_output_columns)
-            writer.writeheader()
-            for qnum in all_qnums:
-                q = questions.get(qnum) or {}
-                a = answers.get(qnum) or {}
-                writer.writerow(asdict(ProblemAndAnswerRow(
-                    question_number=str(qnum),
-                    passage=q.get('passage', ''),
-                    question=q.get('question', ''),
-                    answer=a.get('answer', ''),
-                    question_page_screenshot_paths=q.get('original_page_screenshot_paths', ''),
-                    answer_page_screenshot_paths=a.get('original_page_screenshot_paths', ''),
-                )))
+        rows = []
+        for qnum in all_qnums:
+            q = questions.get(qnum)
+            a = answers.get(qnum)
+            rows.append(ProblemAndAnswerRow(
+                question_number=str(qnum),
+                passage=q.passage if q else '',
+                question=q.question if q else '',
+                answer=a.answer if a else '',
+                question_page_screenshot_paths=(
+                        q.original_page_screenshot_paths if q else ''),
+                answer_page_screenshot_paths='',
+            ))
+        ProblemAndAnswerRow.write_csv(output_path, rows)
+        evaluation_record_output_path = os.path.join(
+                os.path.dirname(os.path.abspath(output_path)),
+                'evaluation_records.jsonl',
+        )
+        EvaluationRecord.serialize_to_jsonl(
+                [
+                        EvaluationRecord.from_problem_and_answer_row(
+                                row,
+                                current_individual_question_csv=current_individual_question_csv,
+                                current_answerspan_csv=current_answerspan_csv,
+                                exam_format=self.exam_format,
+                        )
+                        for row in rows
+                ],
+                evaluation_record_output_path,
+        )
 
         missing_answers = sorted(set(questions) - set(answers))
         missing_questions = sorted(set(answers) - set(questions))
         print(f'wrote {len(all_qnums)} joined rows to {output_path}')
+        print(f'wrote {len(rows)} evaluation records to {evaluation_record_output_path}')
         if missing_answers:
             print(f'  questions without a matching answer: {missing_answers}')
         if missing_questions:
