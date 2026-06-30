@@ -41,12 +41,12 @@ class AnswerMainbodyFSM:
         self.exam_format = exam_format
 
         self.next_itemspan_first_itemnumber = 1  # 下一个 span 的首题号（随 range 行推进）
-        self.next_item_number = 1  # 全局连续题号（随每道题推进）
         self.items:List[NumberedItem] = []  # 产出 [(qnum, passage, question_text)]
         self.line_trace: list[LineTraceRecord] = []
 
         self.is_verbose = debug
         self.has_mainbody_started = False               # 是否已开过 span（无-trigger 独立题的 WARNING 判据）
+        self.finished_lines = 0
 
     def _assert_finished_lines_cursor(self):
         if not hasattr(self, 'finished_lines'):
@@ -144,12 +144,9 @@ class AnswerMainbodyFSM:
             lines = md_text
         else:
             lines = md_text.splitlines()
+        # items / line_trace / 各计数器 / finished_lines 均在 __init__ 初始化，
+        # 一个实例只解析一次，这里不再重复重置（只接收本次输入的 lines）。
         self.lines = lines
-        self.finished_lines = 0
-        self.items = []
-        self.line_trace = []
-        self.next_itemspan_first_itemnumber = 1
-        self.has_mainbody_started = False
         if lines:
             self._assert_finished_lines_cursor()
         while self.finished_lines < len(lines):

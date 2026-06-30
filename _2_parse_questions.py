@@ -1,14 +1,16 @@
 import csv
 import os
-import re
 from dataclasses import asdict
+from typing import List
 
 from _1_get_questions_mainbody import GetQuestionsMainbodyStage
 from dataclass_ import IndividualQuestionRow
+from dataclass_ import LineTraceRecord
 from dataclass_ import Stage
 from dataclass_ import TraceAction
 from dataclass_ import columns
 from parse_evaluation._1_parse_answers import AnswerMainbodyFSM
+from parse_evaluation.dataclass_ import NumberedItemWithContext
 from parse_evaluation.exam_formats import ExamFormat
 from tests.fixture._constants import mineruparsed
 
@@ -71,7 +73,8 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
       的起始行（parse_item），首题之前的行即该 span 的 passage，passage 随
       每道题冗余写出。两个计数器在 span 边界处相等，互不影响。
 
-    输入是 get_questions_mainbody 产出的已裁剪主体：无前言、无答案区。
+    输入可以是 full markdown，也可以是 get_questions_mainbody 产出的已裁剪主体。
+    parse() 会在 FSM 内跳过题目主体前的前言，并在题目主体结束标题处停止。
     """
 
     def __init__(self, exam_format: ExamFormat = None, debug: bool = True):
@@ -79,20 +82,23 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
                 exam_format=exam_format,
                 debug=debug,
         )
-        self.next_span_first_question = 1
+        self.items:List[NumberedItemWithContext] = []  # 产出 [(qnum, passage, question_text)]
+        self.next_item_number = 1
+        # 用实例属性 self.finished_lines 作为唯一的行游标（与父类 parse 一致），
+        # 各 helper 返回的下一个下标赋回它即可。
 
     def _record_last_finished_line_action(self, action: str):
         super()._record_last_finished_line_action(action)
         rec = self.line_trace[-1]
         rec.next_itemspan_first_itemnumber = self.next_item_number
-        rec.expected_span_first_question = self.next_span_first_question
+        rec.expected_span_first_question = self.next_itemspan_first_itemnumber
 
     def _is_span_start(self, line):
         """span 的两种起点：trigger 行（命中任一 trigger），或题号 == 下一 span
         首题号的无-trigger 独立题。"""
         if self.exam_format.is_question_context_start_line(line):
             return True
-        return self.exam_format.get_possible_item_number(line) == self.next_span_first_question
+        return self.exam_format.get_possible_item_number(line) == self.next_itemspan_first_itemnumber
 
     def _maybe_update_next_span_first_question(self, line):
         """范围声明行（praxis 的 trigger 行本身 / plt 的 span 内 Directions 行）
@@ -101,16 +107,91 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
         if not question_range:
             return
         first_q, last_q = question_range
-        if first_q != self.next_span_first_question:
+        if first_q != self.next_itemspan_first_itemnumber:
             print(f'WARNING: range line declares questions {first_q}…{last_q} '
-                  f'but the next span should start at question {self.next_span_first_question}')
+                  f'but the next span should start at question {self.next_itemspan_first_itemnumber}')
             raise ValueError(line)
-        self.next_span_first_question = last_q + 1
+        self.next_itemspan_first_itemnumber = last_q + 1
+
+    def _begin_streaming_span(self):
+        self._span_item_count_before = len(self.items)
+        self._span_context_lines = []
+        self._span_current_question_lines = []
+        self._span_current_question_number = None
+        self._span_last_question_number = None
+
+    def _set_span_end_from_range_line(self, old_next_itemspan_first_itemnumber):
+        if self.next_itemspan_first_itemnumber != old_next_itemspan_first_itemnumber:
+            self._span_last_question_number = self.next_itemspan_first_itemnumber - 1
+
+    def _is_expected_question_start(self, line):
+        qnum = self.exam_format.get_possible_item_number(line)
+        if qnum != self.next_item_number:
+            return False
+        if (
+                self._span_last_question_number is not None
+                and qnum > self._span_last_question_number
+        ):
+            return False
+        return True
+
+    def _finish_current_streaming_question(self):
+        if self._span_current_question_number is None:
+            return
+        self.items.append(NumberedItemWithContext(
+                lines=self._span_current_question_lines,
+                number=self._span_current_question_number,
+                context='\n'.join(self._span_context_lines).rstrip(),
+        ))
+        self._span_current_question_lines = []
+        self._span_current_question_number = None
+
+    def _process_line_for_streaming_questions(self, line):
+        """Update passage/question state for one consumed span line.
+
+        Returns True when this line starts a newly attached question, so the
+        caller can merge ATTACH_QUESTION_CONTEXT into this line's trace record.
+        """
+        if not self._is_expected_question_start(line):
+            if self._span_current_question_number is None:
+                self._span_context_lines.append(line)
+            else:
+                self._span_current_question_lines.append(line)
+            return False
+
+        if self._span_current_question_number is not None:
+            self._finish_current_streaming_question()
+        elif self._span_context_lines:
+            self.current_item_number = self.exam_format.get_possible_item_number(
+                    self.lines[self.finished_lines - 1])
+            self._record_last_finished_line_action(
+                    TraceAction.FINISH_QUESTION_CONTEXT)
+
+        qnum = self.exam_format.get_possible_item_number(line)
+        self._span_current_question_number = qnum
+        self._span_current_question_lines = [line]
+        self.next_item_number += 1
+        return True
+
+    def _finish_streaming_span(self):
+        self._finish_current_streaming_question()
+        if (
+                len(self.items) > self._span_item_count_before
+                and self._span_context_lines
+        ):
+            self.current_item_number = self.items[-1].number
+            self._record_last_finished_line_action(
+                    TraceAction.CLEAR_QUESTION_CONTEXT)
+        self.next_itemspan_first_itemnumber = max(
+                self.next_itemspan_first_itemnumber,
+                self.next_item_number,
+        )
 
     def _consume(self, lines, *, stop_at_question_start=True):
         """从当前 span 起点（self.finished_lines）吃到下一个 span 起点 / EOF，
         沿途处理 range 行。返回 span 的行列表；self.finished_lines 推进到
         下一个待处理下标。"""
+        self._begin_streaming_span()
         line = lines[self.finished_lines]
         span = [line]
         start_action = (
@@ -119,11 +200,20 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
                 else TraceAction.START_INDEPENDENT_ITEM
         )
         self.current_item_number = self.exam_format.get_possible_item_number(line)
+        attached_question = self._process_line_for_streaming_questions(line)
+        old_next_itemspan_first_itemnumber = self.next_itemspan_first_itemnumber
         self._maybe_update_next_span_first_question(line)
+        self._set_span_end_from_range_line(old_next_itemspan_first_itemnumber)
         self.finished_lines += 1
         self._record_last_finished_line_action(start_action)
+        if attached_question:
+            self.current_item_number = self._span_current_question_number
+            self._record_last_finished_line_action(
+                    TraceAction.ATTACH_QUESTION_CONTEXT)
         while self.finished_lines < len(lines):
             line = lines[self.finished_lines]
+            if self.exam_format.is_question_mainbody_end_line(line):
+                break
             if self.exam_format.is_question_context_start_line(line):
                 break
             if stop_at_question_start and self._is_span_start(line):
@@ -135,134 +225,56 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
                     else TraceAction.APPEND_TO_SPAN
             )
             self.current_item_number = self.exam_format.get_possible_item_number(line)
+            attached_question = self._process_line_for_streaming_questions(line)
+            old_next_itemspan_first_itemnumber = self.next_itemspan_first_itemnumber
             self._maybe_update_next_span_first_question(line)
+            self._set_span_end_from_range_line(old_next_itemspan_first_itemnumber)
             self.finished_lines += 1
             self._record_last_finished_line_action(action)
+            if attached_question:
+                self.current_item_number = self._span_current_question_number
+                self._record_last_finished_line_action(
+                        TraceAction.ATTACH_QUESTION_CONTEXT)
+        self._finish_streaming_span()
         return span
 
     def _emit_span(self, span_lines):
-        """span 关闭：非空则（可选 debug 打印后）拆成单题。"""
+        """span 关闭：非空则可选 debug 打印。题目产出已在 _consume 中完成。"""
         text = '\n'.join(span_lines).strip()
         if not text:
             return
         if self.is_verbose:
             print('=' * 100)
             print(text)
-        self._parse_span_into_questions(text)
-
-    # split it back into :
-    # event: find question_context end
-    # event: attach question_context to question
-    # event: attach question_context to question
-    # ...
-    # clear question_context
-    def split_into_items(self, lines, detect_start, expected_start_num, expected_end_num):
-        """把若干行切成「编号严格连续」的一条条 item（题目 / 答案共用）。
-
-        FSM：维护下一个期望号 expected（从 expected_start_num 起逐一递增）。某行
-        只有在 detect_start(line) == expected（且不超过 expected_end_num）时才算新
-        item 起点，并令 expected += 1；否则并入当前 item。这样保证 item 号严格
-        1,2,3,… 连续，把正文里题号对不上的编号行（答案解析里引用的 "7."、子问题
-        列表、题干内编号等）挡在外面。首个 item 起点之前的行被丢弃。
-        expected_end_num 为 None 表示不设上界。返回 [(key, [lines]), ...]。
-        """
-        items = []  # [(key, [lines])]
-        expected = expected_start_num
-        for line in lines:
-            key = detect_start(line)
-            if key == expected and (expected_end_num is None or expected <= expected_end_num):
-                items.append((key, [line]))
-                expected += 1
-            elif items:
-                items[-1][1].append(line)
-        return items
-
-    def _parse_span_into_questions(self, span_text):
-        """span 内分出 passage 和各题（原 _3._split_span_into_questions）。
-
-        一行只有在「匹配 question_line_re 且题号 == next_question_number
-        （全局连续）」时才算题目起始——span 内题号对不上的编号列表（plt 的
-        Goals 1.–4.、题干里的子问题）留在 passage/题干里。
-        """
-        lines = span_text.splitlines()
-        # 先把 passage 单独抽出来：首题之前的所有行（首题一旦出现，后续行都归题目）
-        first_question_idx = next(
-            (i for i, line in enumerate(lines)
-             if self.exam_format.get_possible_item_number( line) == self.next_item_number),
-            len(lines))
-        passage = '\n'.join(lines[:first_question_idx]).rstrip()
-        span_start_line_index = self.current_span_start_line_index
-        if first_question_idx > 0:
-            self.finished_lines = span_start_line_index + first_question_idx
-            self.current_item_number = self.exam_format.get_possible_item_number(
-                    lines[first_question_idx - 1])
-            self._record_last_finished_line_action(TraceAction.FINISH_QUESTION_CONTEXT)
-
-        # 再在首题及其后的行上分题：题号从全局连续计数起严格递增（FSM 内判定），
-        # 上界开放（一个 span 的题数不预先知道）
-        items = self.split_into_items(
-            lines[first_question_idx:],
-            lambda line: self.exam_format.get_possible_item_number( line),
-            expected_start_num=self.next_item_number,
-            expected_end_num=(
-                self.next_span_first_question - 1
-                if self.next_span_first_question > self.next_item_number
-                else None
-            ),
-        )
-        for qnum, qlines in items:
-            item_line_index = span_start_line_index + next(
-                    i for i, line in enumerate(lines)
-                    if self.exam_format.get_possible_item_number(line) == qnum
-            )
-            self.finished_lines = item_line_index + 1
-            self.current_item_number = qnum
-            self._record_last_finished_line_action(TraceAction.ATTACH_QUESTION_CONTEXT)
-            self.items.append(
-                (qnum, passage, '\n'.join(qlines).strip()))
-        if first_question_idx > 0 and items:
-            last_qnum = items[-1][0]
-            last_item_line_index = span_start_line_index + next(
-                    i for i, line in enumerate(lines)
-                    if self.exam_format.get_possible_item_number(line) == last_qnum
-            )
-            self.finished_lines = last_item_line_index + 1
-            self.current_item_number = last_qnum
-            self._record_last_finished_line_action(TraceAction.CLEAR_QUESTION_CONTEXT)
-        self.next_item_number += len(items)  # 跨 span 推进全局题号
-        self.next_span_first_question = max(
-            self.next_span_first_question, self.next_item_number)
 
     def _parse_till_context_item_finish(self, lines):
         """passage-question span：从 trigger 行起，吃完整个 span（passage + 其各题）。"""
         self.has_mainbody_started = True
-        self.current_span_start_line_index = self.finished_lines
         span = self._consume(lines, stop_at_question_start=False)
         next_i = self.finished_lines  # _consume 推进后的下一待处理行
         self._emit_span(span)
-        # _emit_span 会反复改动 self.finished_lines，这里复位到 span 之后的待处理行
+        # debug 打印不应改变游标；复位到 span 之后的待处理行
         self.finished_lines = next_i
 
     def parse_till_item_finish(self, lines):
         """无 passage 的独立题：从题目行起，吃完这一道题。"""
         if self.has_mainbody_started:
-            print(f'WARNING: question {self.next_span_first_question} appeared '
+            print(f'WARNING: question {self.next_itemspan_first_itemnumber} appeared '
                   f'without a preceding trigger line — if it has a '
                   f'passage, the passage stayed in the previous span')
         self.has_mainbody_started = True
-        self.next_span_first_question += 1
+        self.next_itemspan_first_itemnumber += 1
         # 独立题内不会出现 range 行：praxis 的 range 行就是 trigger（会被
         # _is_span_start 先终止本 span）；plt 的 "Directions:" 行必跟在
         # Case History/Discrete trigger 之后，不会落在无-trigger 的独立题里。
         # 因此 _consume 沿途的 _apply_range 必是 no-op，不会推进首题号——断言之。
-        before = self.next_span_first_question
-        self.current_span_start_line_index = self.finished_lines
+        before = self.next_itemspan_first_itemnumber
         span = self._consume(lines)
         next_i = self.finished_lines  # _consume 推进后的下一待处理行
-        assert self.next_span_first_question == before, (
+        assert self.next_itemspan_first_itemnumber == before, (
             f'independent question span unexpectedly contained a range line: {span!r}')
         self._emit_span(span)
-        # 同上：_emit_span 改动游标后复位到下一待处理行
+        # debug 打印不应改变游标；复位到下一待处理行
         self.finished_lines = next_i
 
     def parse(self, md_text):
@@ -272,17 +284,24 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
         self.line_trace = []
         self.next_item_number = 1
         self.next_itemspan_first_itemnumber = 1
-        self.next_span_first_question = 1
+        self.current_item_number = None
         self.has_mainbody_started = False
-        # 用实例属性 self.finished_lines 作为唯一的行游标（与父类 parse 一致），
-        # 各 helper 返回的下一个下标赋回它即可。
         self.finished_lines = 0
+
         while self.finished_lines < len(lines):
             line = lines[self.finished_lines]
+            if (
+                    self.has_mainbody_started
+                    and self.exam_format.is_question_mainbody_end_line(line)
+            ):
+                self.current_item_number = self.exam_format.get_possible_item_number(line)
+                self.finished_lines += 1
+                self._record_last_finished_line_action(TraceAction.FINISH_MAINBODY)
+                break
             if self.exam_format.is_question_context_start_line(line):
                 # passage-question span 起点；helper 内部推进 self.finished_lines
                 self._parse_till_context_item_finish(lines)
-            elif self.exam_format.get_possible_item_number( line) == self.next_span_first_question:
+            elif self.exam_format.get_possible_item_number( line) == self.next_itemspan_first_itemnumber:
                 # 无 passage 的独立题起点；helper 内部推进 self.finished_lines
                 self.parse_till_item_finish(lines)
             else:
@@ -292,7 +311,10 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
                 # 跳过即可。
                 self.current_item_number = self.exam_format.get_possible_item_number(line)
                 self.finished_lines += 1
-                self._record_last_finished_line_action(TraceAction.SKIP)
+                self._record_last_finished_line_action(
+                        TraceAction.SKIP_INSIDE_MAINBODY
+                        if self.has_mainbody_started
+                        else TraceAction.SKIP_BEFORE_MAINBODY)
         print(f'FSM parsed {len(self.items)} questions '
               f'(1..{self.next_item_number - 1})')
         return self.items
@@ -310,11 +332,11 @@ class SplitQuestionMainbodyIntoIndividualQuestionsStage(Stage):
         with open(output_path, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=output_csv_columns)
             writer.writeheader()
-            for qnum, passage, question in questions:
+            for item in questions:
                 writer.writerow(asdict(IndividualQuestionRow(
-                    question_number=str(qnum),
-                    passage=passage,
-                    question=question,
+                    question_number=str(item.number),
+                    passage=item.context,
+                    question='\n'.join(item.lines).strip(),
                     # 题目侧没有截图路径来源，恒取默认值（原 _3 同此）
                     original_page_screenshot_paths='[]',
                 )))
@@ -325,17 +347,8 @@ class SplitQuestionMainbodyIntoIndividualQuestionsStage(Stage):
         with open(trace_output_path, 'w', newline='') as f:
             writer = csv.DictWriter(
                     f,
-                    fieldnames=[
-                            'finished_lines',
-                            'expected_item_number',
-                            'expected_span_first_question',
-                            'item_number',
-                            'action',
-                            'line',
-                            'caller_function',
-                            'caller_location',
-                    ],
-                    extrasaction='ignore',
+                    # 列名从 LineTraceRecord 字段自动导出，避免与 dataclass 漂移
+                    fieldnames=columns(LineTraceRecord),
             )
             writer.writeheader()
             writer.writerows(asdict(r) for r in fsm.line_trace)
