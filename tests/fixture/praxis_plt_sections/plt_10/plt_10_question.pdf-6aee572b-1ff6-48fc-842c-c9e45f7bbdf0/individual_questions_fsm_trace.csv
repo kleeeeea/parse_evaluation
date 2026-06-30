@@ -1,10 +1,10 @@
 finished_lines_count,included_items,action,line,caller_function,caller_location,expected_span_first_question,has_mainbody_started
-1,0,skip_before_mainbody,# PRACTICE: PLT CONSTRUCTED-RESPONSE QUESTIONS,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-2,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-3,0,skip_before_mainbody,## PLT Case Histories,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-4,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-5,0,skip_before_mainbody,Directions: Each case history in this section is followed by two short-answer questions. Your responses to the questions will be evaluated with respect to professionally accepted principles and practices of learning and teaching. Be sure to answer all parts of the question.,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-6,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
+1,0,skip_before_mainbody,# PRACTICE: PLT CONSTRUCTED-RESPONSE QUESTIONS,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+2,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+3,0,skip_before_mainbody,## PLT Case Histories,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+4,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+5,0,skip_before_mainbody,Directions: Each case history in this section is followed by two short-answer questions. Your responses to the questions will be evaluated with respect to professionally accepted principles and practices of learning and teaching. Be sure to answer all parts of the question.,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+6,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
 7,0,append_to_context|start_context_item_span,## Constructed-Response Questions: Case History #1,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
 8,0,append_to_context,,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
 9,0,append_to_context,Case History #1: Early Childhood,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
@@ -269,4 +269,4 @@ finished_lines_count,included_items,action,line,caller_function,caller_location,
 268,8,append_to_item,- Suggest TWO modifications Mr. Fayerwether could make to his teaching style that would indirectly help Karl.  ,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
 269,8,append_to_item,"- For EACH modification, explain how it would aid Karl while still being indirect enough that he would not refuse. Base your answers on the principles of educating students with disabilities.",_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
 270,8,append_to_item,,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
-271,8,finish_mainbody,## ANSWERS AND EXPLANATIONS,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:197,,True
+271,8,finish_mainbody,## ANSWERS AND EXPLANATIONS,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:199,,True

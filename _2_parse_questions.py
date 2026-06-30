@@ -161,6 +161,8 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
                 break
             if self.exam_format.is_question_context_span_starting_line(line):
                 break
+            if self.exam_format.is_question_non_context_section_starting_line(line):
+                break
             if stop_at_question_start and self.is_next_item_start(line):
                 break
             self._maybe_set_span_last_itemnumber(line)

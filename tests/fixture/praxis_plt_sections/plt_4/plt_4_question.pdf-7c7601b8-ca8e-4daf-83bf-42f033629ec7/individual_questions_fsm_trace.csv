@@ -1,472 +1,472 @@
 finished_lines_count,included_items,action,line,caller_function,caller_location,expected_span_first_question,has_mainbody_started
-1,0,skip_before_mainbody,# Principles of Learning and Teaching Practice Test,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-2,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-3,0,skip_before_mainbody,## TEST INFO BOX,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-4,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-5,0,skip_before_mainbody,## Computer Delivered,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-6,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-7,0,skip_before_mainbody,2 hours,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-8,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-9,0,skip_before_mainbody,70 Multiple-Choice Items,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-10,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-11,0,skip_before_mainbody,"2 Scenarios, each with 2 constructed responses",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-12,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-13,0,skip_before_mainbody,"This sample full-length PLT contains all the elements of the real test. The test is given in paper-delivered or computer-delivered format. The trend is toward the computer-delivered format, and this test simulates the computer-delivered format. That means you will type your responses to the constructed test items and mark your answers directly on the multiple-choice test.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-14,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-15,0,skip_before_mainbody,"The PLT is given at four different levels: PLT Early Childhood, PLT K–6, PLT 5–9, and PLT 7–12. There is really a lot of overlap among the tests.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-16,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-17,0,skip_before_mainbody,"Follow the 2-hour time limit as you complete this practice test. You may begin with the constructed-response items that follow, or with the multiple-choice test on page 435.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-18,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-19,0,skip_before_mainbody,"There are two scenarios suited for Early Childhood/K-6 PLTs and two scenarios suited for 5–9 /7–12 PLTs. You will type two constructed responses to two questions from each of the two scenarios, just like the real PLT. The 70 multiple-choice items, just like the real PLT, include a range of grade levels.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-20,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-21,0,skip_before_mainbody,Complete the Early Childhood/Elementary Scenario on page 425.,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-22,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-23,0,skip_before_mainbody,## or,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-24,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-25,0,skip_before_mainbody,"Complete the Grades 5–9, 7–12 Scenario on page 431.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-26,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-27,0,skip_before_mainbody,Then complete the multiple-choice questions on page 435.,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-28,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-29,0,skip_before_mainbody,Fully explained answers begin on page 452.,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-30,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-31,0,skip_before_mainbody,![](images/996b5b0b4066eb59f40116e59072cfefc957a760ce2e492ecf990a0aece066d4.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-32,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-33,0,skip_before_mainbody,![](images/e29b190d46cf8b4966e2cf2048d8adbf5579f880b261e6442e9ba11abcafac37.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-34,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-35,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-36,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-37,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-38,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-39,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-40,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-41,0,skip_before_mainbody,![](images/eb54308a8ad089de64e74af5e7c38cc6f7cbea59dad7a81cac80a50fef820d58.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-42,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-43,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-44,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-45,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-46,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-47,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-48,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-49,0,skip_before_mainbody,![](images/1f427d38541d74767d349a01d088d1f0fd72f2549b607bfb69da37271c0ea6cb.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-50,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-51,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-52,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-53,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-54,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-55,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-56,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-57,0,skip_before_mainbody,![](images/42cbe7372feac0ca51c5c6871115cfcabb93bbf6df8d8418be846f0ae7a54fae.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-58,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-59,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-60,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-61,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-62,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-63,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-64,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-65,0,skip_before_mainbody,![](images/7ac46af3248fcecbc10c922b6a493f105d5d64065bac547663a84bac8bb2ece3.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-66,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-67,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-68,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-69,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-70,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-71,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-72,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-73,0,skip_before_mainbody,![](images/10fbc0ee0a6b8d2645f4188bc0fe80d395dbeb70d6238e0aee42122dd6077a7f.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-74,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-75,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-76,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-77,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-78,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-79,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-80,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-81,0,skip_before_mainbody,![](images/68a0afe20cbf97e191d08ea4b332c7c29aaab9188cb53992916f74fdacbddb00.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-82,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-83,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-84,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-85,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-86,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-87,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-88,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-89,0,skip_before_mainbody,![](images/da7efb0842cbd225f409cf7bc2dd31e2111627bfd5dbca0a1232f55074d0cd01.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-90,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-91,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-92,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-93,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-94,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-95,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-96,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-97,0,skip_before_mainbody,![](images/50f78ac453b3f9d340bda95cc9d25cb73f75bf19e6e476fe6eacf6bb4ad2c93f.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-98,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-99,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-100,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-101,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-102,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-103,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-104,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-105,0,skip_before_mainbody,![](images/dc70b9af24962a95f84a2f2e43dcc21e5e29b1665e881393e545f971710470ce.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-106,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-107,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-108,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-109,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-110,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-111,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-112,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-113,0,skip_before_mainbody,$$,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-114,0,skip_before_mainbody,\frac{1}{2} = \frac{1}{2}\left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2} + \frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right). \tag{4},parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-115,0,skip_before_mainbody,$$,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-116,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-117,0,skip_before_mainbody,![](images/4516595f1f5ef9d237599a15e097c6b3551967956eeaccdf12e9aa5529cf65a5.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-118,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-119,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-120,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-121,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-122,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-123,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-124,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-125,0,skip_before_mainbody,![](images/696d2a75592e836c5aa8168dd446dcc55ff30f7bc8a8d0ba9e4bababca5cd689.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-126,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-127,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-128,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-129,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-130,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-131,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-132,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-133,0,skip_before_mainbody,![](images/74ff65328e8568f69a8311962e747b036c70d8825514433d5e9011b1d061effb.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-134,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-135,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-136,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-137,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-138,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-139,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-140,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-141,0,skip_before_mainbody,![](images/981d97b29172447145e925fba8f6e9e20133deacb3293e029e4d04b91a6e6237.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-142,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-143,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-144,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-145,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-146,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-147,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-148,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-149,0,skip_before_mainbody,![](images/b49c7c8e58faef8176171126552d14dd26ec53462a376dcd6ed8111138f89fc5.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-150,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-151,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-152,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-153,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-154,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-155,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-156,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-157,0,skip_before_mainbody,![](images/95acda344e23f3917a7ba57ede2ddd82706371d39ce7e736aa5ef2692e0b498c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-158,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-159,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-160,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-161,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-162,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-163,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-164,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-165,0,skip_before_mainbody,![](images/a4e44f0abdb09dff8665757c8d78e186e6d19ee398d819919312fca0d56c76ad.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-166,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-167,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-168,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-169,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-170,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-171,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-172,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-173,0,skip_before_mainbody,![](images/49faf972938a4a4b6375ed6a204d78bb7eb9bc6add000c5dc8df904ea270e69c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-174,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-175,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-176,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-177,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-178,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-179,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-180,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-181,0,skip_before_mainbody,![](images/258f4d715e4293b674c46b847ea7c946045f15a80c6c0b8306f4c3a65fd85ce0.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-182,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-183,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-184,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-185,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-186,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-187,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-188,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-189,0,skip_before_mainbody,![](images/67b520a906d086979e08a3225fabebf322b38264e48dc1b7065823d503b7128f.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-190,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-191,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-192,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-193,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-194,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-195,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-196,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-197,0,skip_before_mainbody,![](images/e6688dd0910dd75a1f5be9de09601934174a4be1d3c41b789a452c36a5092f30.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-198,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-199,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-200,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-201,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-202,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-203,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-204,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-205,0,skip_before_mainbody,![](images/f8825bb8dec53d89c020d06b693cc2b0d9ae834291f9132b1af107f212acbc38.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-206,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-207,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-208,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-209,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-210,0,skip_before_mainbody,"Completely dark image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-211,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-212,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-213,0,skip_before_mainbody,![](images/f56666ab244b873b19582f06c4e91a185a522ee1ce36527e18f2f394924fc704.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-214,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-215,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-216,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-217,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-218,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-219,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-220,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-221,0,skip_before_mainbody,![](images/dd0078d66aafbdd1367c664eb0224577369de20730f87ce4351732fd0dc05e0a.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-222,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-223,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-224,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-225,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-226,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-227,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-228,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-229,0,skip_before_mainbody,![](images/09cabb17864c5a82e3004b98b0d7eb8ad7589c60715467fe286dae92515b14a7.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-230,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-231,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-232,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-233,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-234,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-235,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-236,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-237,0,skip_before_mainbody,![](images/c4a8b90ff841d55308275f3b4a74528a7c75ae74ba1b96f4af4b47e019761184.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-238,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-239,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-240,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-241,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-242,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-243,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-244,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-245,0,skip_before_mainbody,$$,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-246,0,skip_before_mainbody,\frac{1}{2} = \frac{1}{2}\left(\frac{1}{2}\right) \times \frac{1}{2} + \frac{1}{2}\left(\frac{1}{2}\right) \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1.0 - 0.05}{2.0} \times \frac{1}{2} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - \mathrm{d}}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d} t},parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-247,0,skip_before_mainbody,$$,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-248,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-249,0,skip_before_mainbody,![](images/c316c7962975d57ae2bab523d7207b68f94446da017f3c018a8790795a191707.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-250,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-251,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-252,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-253,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-254,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-255,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-256,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-257,0,skip_before_mainbody,![](images/9f224aeaab9921fa54b734024885ca9f01a1f4364e534f23cc409f5ea444a7bb.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-258,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-259,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-260,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-261,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-262,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-263,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-264,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-265,0,skip_before_mainbody,![](images/cefbac7210999138233040e42ad3ba10c5f413a744feb1094bbaadd801142645.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-266,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-267,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-268,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-269,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-270,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-271,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-272,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-273,0,skip_before_mainbody,![](images/ba2a42c1c979d8b5559fa256a0b16b4ef4009448c212e0492a67eb9cfdc4f74e.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-274,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-275,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-276,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-277,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-278,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-279,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-280,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-281,0,skip_before_mainbody,![](images/2bf14746b868ba3e003365850450d374e9f7be2840076efedc3170d23831676c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-282,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-283,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-284,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-285,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-286,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-287,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-288,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-289,0,skip_before_mainbody,![](images/ac2bc6807235d3913d1811361ca6edc61d84a6f41811f73f2a99888999e5fb05.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-290,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-291,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-292,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-293,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-294,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-295,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-296,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-297,0,skip_before_mainbody,![](images/14367d9acc2a112482840de8bfd6dc9c3832dee7b5118c3c7a246725dafe34aa.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-298,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-299,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-300,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-301,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-302,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-303,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-304,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-305,0,skip_before_mainbody,![](images/31ae80d0cd021c344708e635b8203218a709f5a36f52ff701de78f8747566ddc.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-306,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-307,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-308,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-309,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-310,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-311,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-312,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-313,0,skip_before_mainbody,![](images/5bb6bcce6f58fc146676d85dc61b3f930793f57f3728b7fac12e2470e883724a.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-314,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-315,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-316,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-317,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-318,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-319,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-320,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-321,0,skip_before_mainbody,![](images/0f46fb9f815af5e30701a79de8e50528d6351abd959eddba02d7012114176a6a.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-322,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-323,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-324,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-325,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-326,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-327,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-328,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-329,0,skip_before_mainbody,![](images/621b334018f5fc982a186e120521380fcddab019c31c4a9ae80e143644aac866.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-330,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-331,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-332,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-333,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-334,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-335,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-336,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-337,0,skip_before_mainbody,![](images/a9cdb84a44de1aff2d142dd004c14faa197f1b41010adfbd8eb0a6c3baa7d624.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-338,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-339,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-340,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-341,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-342,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-343,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-344,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-345,0,skip_before_mainbody,![](images/ec481848eb5b2c420670e48164df36cbb0fb6ea71d3e54bb9906e22d89f0304c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-346,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-347,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-348,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-349,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-350,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-351,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-352,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-353,0,skip_before_mainbody,![](images/286db07433284dfddb20f4faa2695a57a67e88892a37afe91f9d8df013920949.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-354,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-355,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-356,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-357,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-358,0,skip_before_mainbody,"Solid gray image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-359,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-360,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-361,0,skip_before_mainbody,![](images/9d7b8d2f9ac1895befde7c9e7222fb7990267061afc6bf1a818c0c506cf6c53b.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-362,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-363,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-364,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-365,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-366,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-367,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-368,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-369,0,skip_before_mainbody,![](images/e3f1e7b69437579cc2d5f12cb14b96c3a87d5fae1d7cb9e54b3aca4d1ad83d31.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-370,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-371,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-372,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-373,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-374,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-375,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-376,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-377,0,skip_before_mainbody,![](images/a679c329c9d8d0b54377dcccbc80756501731cde5d5d229b99b455cae74eb5af.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-378,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-379,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-380,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-381,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-382,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-383,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-384,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-385,0,skip_before_mainbody,![](images/89a7244e53c45f3b5ccd249cf50169cacd04d52d356770e4e9376c8c3b3a4c08.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-386,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-387,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-388,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-389,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-390,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-391,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-392,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-393,0,skip_before_mainbody,![](images/dcef174a5d52e7ddd214b7120b29a4e3bc27ccd513ff712af88a147eb99f5d0c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-394,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-395,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-396,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-397,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-398,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-399,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-400,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-401,0,skip_before_mainbody,![](images/d6ea3488c44f31c32406cb8e37f5d6a58c79c4b27313b3249fd94e8de099ceb2.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-402,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-403,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-404,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-405,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-406,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-407,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-408,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-409,0,skip_before_mainbody,![](images/5ffcf74b0e1d7b6de36604368cfbd4316ddf0362047f83b9d18e5e9171393765.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-410,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-411,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-412,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-413,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-414,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-415,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-416,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-417,0,skip_before_mainbody,![](images/0e670c94dcdfe75e5c8e76548102ba6ecd40662686aeeacf67126914e79829a6.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-418,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-419,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-420,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-421,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-422,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-423,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-424,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-425,0,skip_before_mainbody,![](images/476b1de6d3fa04bd5a5e36ba3b8222dd3059c50708f0d414e5db6b5fd01564ba.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-426,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-427,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-428,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-429,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-430,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-431,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-432,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-433,0,skip_before_mainbody,![](images/b9928909c13b87149480418ed50b9166169b071e3bc0512db710e1f9adef8081.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-434,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-435,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-436,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-437,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-438,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-439,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-440,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-441,0,skip_before_mainbody,![](images/f4c76cf4fc24ef4a0c15c96715cee6659e2ac83ae532dd09e534591b46ff0212.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-442,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-443,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-444,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-445,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-446,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-447,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-448,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-449,0,skip_before_mainbody,![](images/6fd9520636f4473e4194b601971c013ad5c63d054a7d35a7590ccffea8b1825d.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-450,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-451,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-452,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-453,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-454,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-455,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-456,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-457,0,skip_before_mainbody,![](images/e3a89a59eb1017b37177323108742ea17dca0d4cd119e03ca1a431cca0b160c8.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-458,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-459,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-460,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-461,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-462,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-463,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-464,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-465,0,skip_before_mainbody,![](images/67e7df8a529ef400c2327b63fe2c6bafde4e865d45bedf78d8b1d9027f8bf93c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-466,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-467,0,skip_before_mainbody,# ANSWER SHEET Practice PLT Test,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-468,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
+1,0,skip_before_mainbody,# Principles of Learning and Teaching Practice Test,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+2,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+3,0,skip_before_mainbody,## TEST INFO BOX,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+4,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+5,0,skip_before_mainbody,## Computer Delivered,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+6,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+7,0,skip_before_mainbody,2 hours,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+8,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+9,0,skip_before_mainbody,70 Multiple-Choice Items,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+10,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+11,0,skip_before_mainbody,"2 Scenarios, each with 2 constructed responses",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+12,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+13,0,skip_before_mainbody,"This sample full-length PLT contains all the elements of the real test. The test is given in paper-delivered or computer-delivered format. The trend is toward the computer-delivered format, and this test simulates the computer-delivered format. That means you will type your responses to the constructed test items and mark your answers directly on the multiple-choice test.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+14,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+15,0,skip_before_mainbody,"The PLT is given at four different levels: PLT Early Childhood, PLT K–6, PLT 5–9, and PLT 7–12. There is really a lot of overlap among the tests.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+16,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+17,0,skip_before_mainbody,"Follow the 2-hour time limit as you complete this practice test. You may begin with the constructed-response items that follow, or with the multiple-choice test on page 435.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+18,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+19,0,skip_before_mainbody,"There are two scenarios suited for Early Childhood/K-6 PLTs and two scenarios suited for 5–9 /7–12 PLTs. You will type two constructed responses to two questions from each of the two scenarios, just like the real PLT. The 70 multiple-choice items, just like the real PLT, include a range of grade levels.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+20,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+21,0,skip_before_mainbody,Complete the Early Childhood/Elementary Scenario on page 425.,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+22,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+23,0,skip_before_mainbody,## or,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+24,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+25,0,skip_before_mainbody,"Complete the Grades 5–9, 7–12 Scenario on page 431.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+26,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+27,0,skip_before_mainbody,Then complete the multiple-choice questions on page 435.,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+28,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+29,0,skip_before_mainbody,Fully explained answers begin on page 452.,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+30,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+31,0,skip_before_mainbody,![](images/996b5b0b4066eb59f40116e59072cfefc957a760ce2e492ecf990a0aece066d4.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+32,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+33,0,skip_before_mainbody,![](images/e29b190d46cf8b4966e2cf2048d8adbf5579f880b261e6442e9ba11abcafac37.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+34,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+35,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+36,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+37,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+38,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+39,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+40,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+41,0,skip_before_mainbody,![](images/eb54308a8ad089de64e74af5e7c38cc6f7cbea59dad7a81cac80a50fef820d58.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+42,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+43,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+44,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+45,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+46,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+47,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+48,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+49,0,skip_before_mainbody,![](images/1f427d38541d74767d349a01d088d1f0fd72f2549b607bfb69da37271c0ea6cb.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+50,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+51,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+52,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+53,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+54,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+55,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+56,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+57,0,skip_before_mainbody,![](images/42cbe7372feac0ca51c5c6871115cfcabb93bbf6df8d8418be846f0ae7a54fae.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+58,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+59,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+60,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+61,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+62,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+63,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+64,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+65,0,skip_before_mainbody,![](images/7ac46af3248fcecbc10c922b6a493f105d5d64065bac547663a84bac8bb2ece3.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+66,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+67,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+68,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+69,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+70,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+71,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+72,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+73,0,skip_before_mainbody,![](images/10fbc0ee0a6b8d2645f4188bc0fe80d395dbeb70d6238e0aee42122dd6077a7f.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+74,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+75,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+76,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+77,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+78,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+79,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+80,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+81,0,skip_before_mainbody,![](images/68a0afe20cbf97e191d08ea4b332c7c29aaab9188cb53992916f74fdacbddb00.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+82,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+83,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+84,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+85,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+86,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+87,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+88,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+89,0,skip_before_mainbody,![](images/da7efb0842cbd225f409cf7bc2dd31e2111627bfd5dbca0a1232f55074d0cd01.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+90,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+91,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+92,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+93,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+94,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+95,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+96,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+97,0,skip_before_mainbody,![](images/50f78ac453b3f9d340bda95cc9d25cb73f75bf19e6e476fe6eacf6bb4ad2c93f.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+98,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+99,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+100,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+101,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+102,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+103,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+104,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+105,0,skip_before_mainbody,![](images/dc70b9af24962a95f84a2f2e43dcc21e5e29b1665e881393e545f971710470ce.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+106,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+107,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+108,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+109,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+110,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+111,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+112,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+113,0,skip_before_mainbody,$$,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+114,0,skip_before_mainbody,\frac{1}{2} = \frac{1}{2}\left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2} + \frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right) \leqslant \frac{1}{2} \left(\frac{1}{2}\right). \tag{4},parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+115,0,skip_before_mainbody,$$,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+116,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+117,0,skip_before_mainbody,![](images/4516595f1f5ef9d237599a15e097c6b3551967956eeaccdf12e9aa5529cf65a5.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+118,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+119,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+120,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+121,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+122,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+123,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+124,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+125,0,skip_before_mainbody,![](images/696d2a75592e836c5aa8168dd446dcc55ff30f7bc8a8d0ba9e4bababca5cd689.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+126,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+127,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+128,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+129,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+130,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+131,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+132,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+133,0,skip_before_mainbody,![](images/74ff65328e8568f69a8311962e747b036c70d8825514433d5e9011b1d061effb.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+134,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+135,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+136,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+137,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+138,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+139,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+140,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+141,0,skip_before_mainbody,![](images/981d97b29172447145e925fba8f6e9e20133deacb3293e029e4d04b91a6e6237.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+142,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+143,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+144,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+145,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+146,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+147,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+148,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+149,0,skip_before_mainbody,![](images/b49c7c8e58faef8176171126552d14dd26ec53462a376dcd6ed8111138f89fc5.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+150,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+151,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+152,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+153,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+154,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+155,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+156,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+157,0,skip_before_mainbody,![](images/95acda344e23f3917a7ba57ede2ddd82706371d39ce7e736aa5ef2692e0b498c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+158,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+159,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+160,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+161,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+162,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+163,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+164,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+165,0,skip_before_mainbody,![](images/a4e44f0abdb09dff8665757c8d78e186e6d19ee398d819919312fca0d56c76ad.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+166,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+167,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+168,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+169,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+170,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+171,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+172,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+173,0,skip_before_mainbody,![](images/49faf972938a4a4b6375ed6a204d78bb7eb9bc6add000c5dc8df904ea270e69c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+174,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+175,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+176,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+177,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+178,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+179,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+180,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+181,0,skip_before_mainbody,![](images/258f4d715e4293b674c46b847ea7c946045f15a80c6c0b8306f4c3a65fd85ce0.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+182,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+183,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+184,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+185,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+186,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+187,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+188,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+189,0,skip_before_mainbody,![](images/67b520a906d086979e08a3225fabebf322b38264e48dc1b7065823d503b7128f.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+190,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+191,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+192,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+193,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+194,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+195,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+196,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+197,0,skip_before_mainbody,![](images/e6688dd0910dd75a1f5be9de09601934174a4be1d3c41b789a452c36a5092f30.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+198,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+199,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+200,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+201,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+202,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+203,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+204,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+205,0,skip_before_mainbody,![](images/f8825bb8dec53d89c020d06b693cc2b0d9ae834291f9132b1af107f212acbc38.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+206,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+207,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+208,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+209,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+210,0,skip_before_mainbody,"Completely dark image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+211,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+212,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+213,0,skip_before_mainbody,![](images/f56666ab244b873b19582f06c4e91a185a522ee1ce36527e18f2f394924fc704.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+214,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+215,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+216,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+217,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+218,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+219,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+220,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+221,0,skip_before_mainbody,![](images/dd0078d66aafbdd1367c664eb0224577369de20730f87ce4351732fd0dc05e0a.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+222,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+223,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+224,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+225,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+226,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+227,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+228,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+229,0,skip_before_mainbody,![](images/09cabb17864c5a82e3004b98b0d7eb8ad7589c60715467fe286dae92515b14a7.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+230,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+231,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+232,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+233,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+234,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+235,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+236,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+237,0,skip_before_mainbody,![](images/c4a8b90ff841d55308275f3b4a74528a7c75ae74ba1b96f4af4b47e019761184.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+238,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+239,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+240,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+241,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+242,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+243,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+244,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+245,0,skip_before_mainbody,$$,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+246,0,skip_before_mainbody,\frac{1}{2} = \frac{1}{2}\left(\frac{1}{2}\right) \times \frac{1}{2} + \frac{1}{2}\left(\frac{1}{2}\right) \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{2} \times \frac{1}{2} + \frac{1.0 - 0.05}{2.0} \times \frac{1}{2} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - 0.05}{2.0} + \frac{1.0 - \mathrm{d}}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 0.05}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.0}{\mathrm{d}t} + \frac{1.0 - 1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d}t} + \frac{1.3}{\mathrm{d} t},parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+247,0,skip_before_mainbody,$$,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+248,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+249,0,skip_before_mainbody,![](images/c316c7962975d57ae2bab523d7207b68f94446da017f3c018a8790795a191707.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+250,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+251,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+252,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+253,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+254,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+255,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+256,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+257,0,skip_before_mainbody,![](images/9f224aeaab9921fa54b734024885ca9f01a1f4364e534f23cc409f5ea444a7bb.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+258,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+259,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+260,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+261,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+262,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+263,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+264,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+265,0,skip_before_mainbody,![](images/cefbac7210999138233040e42ad3ba10c5f413a744feb1094bbaadd801142645.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+266,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+267,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+268,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+269,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+270,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+271,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+272,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+273,0,skip_before_mainbody,![](images/ba2a42c1c979d8b5559fa256a0b16b4ef4009448c212e0492a67eb9cfdc4f74e.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+274,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+275,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+276,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+277,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+278,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+279,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+280,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+281,0,skip_before_mainbody,![](images/2bf14746b868ba3e003365850450d374e9f7be2840076efedc3170d23831676c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+282,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+283,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+284,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+285,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+286,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+287,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+288,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+289,0,skip_before_mainbody,![](images/ac2bc6807235d3913d1811361ca6edc61d84a6f41811f73f2a99888999e5fb05.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+290,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+291,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+292,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+293,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+294,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+295,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+296,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+297,0,skip_before_mainbody,![](images/14367d9acc2a112482840de8bfd6dc9c3832dee7b5118c3c7a246725dafe34aa.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+298,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+299,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+300,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+301,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+302,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+303,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+304,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+305,0,skip_before_mainbody,![](images/31ae80d0cd021c344708e635b8203218a709f5a36f52ff701de78f8747566ddc.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+306,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+307,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+308,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+309,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+310,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+311,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+312,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+313,0,skip_before_mainbody,![](images/5bb6bcce6f58fc146676d85dc61b3f930793f57f3728b7fac12e2470e883724a.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+314,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+315,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+316,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+317,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+318,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+319,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+320,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+321,0,skip_before_mainbody,![](images/0f46fb9f815af5e30701a79de8e50528d6351abd959eddba02d7012114176a6a.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+322,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+323,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+324,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+325,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+326,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+327,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+328,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+329,0,skip_before_mainbody,![](images/621b334018f5fc982a186e120521380fcddab019c31c4a9ae80e143644aac866.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+330,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+331,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+332,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+333,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+334,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+335,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+336,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+337,0,skip_before_mainbody,![](images/a9cdb84a44de1aff2d142dd004c14faa197f1b41010adfbd8eb0a6c3baa7d624.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+338,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+339,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+340,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+341,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+342,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+343,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+344,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+345,0,skip_before_mainbody,![](images/ec481848eb5b2c420670e48164df36cbb0fb6ea71d3e54bb9906e22d89f0304c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+346,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+347,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+348,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+349,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+350,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+351,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+352,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+353,0,skip_before_mainbody,![](images/286db07433284dfddb20f4faa2695a57a67e88892a37afe91f9d8df013920949.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+354,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+355,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+356,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+357,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+358,0,skip_before_mainbody,"Solid gray image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+359,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+360,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+361,0,skip_before_mainbody,![](images/9d7b8d2f9ac1895befde7c9e7222fb7990267061afc6bf1a818c0c506cf6c53b.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+362,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+363,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+364,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+365,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+366,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+367,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+368,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+369,0,skip_before_mainbody,![](images/e3f1e7b69437579cc2d5f12cb14b96c3a87d5fae1d7cb9e54b3aca4d1ad83d31.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+370,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+371,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+372,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+373,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+374,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+375,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+376,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+377,0,skip_before_mainbody,![](images/a679c329c9d8d0b54377dcccbc80756501731cde5d5d229b99b455cae74eb5af.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+378,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+379,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+380,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+381,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+382,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+383,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+384,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+385,0,skip_before_mainbody,![](images/89a7244e53c45f3b5ccd249cf50169cacd04d52d356770e4e9376c8c3b3a4c08.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+386,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+387,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+388,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+389,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+390,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+391,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+392,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+393,0,skip_before_mainbody,![](images/dcef174a5d52e7ddd214b7120b29a4e3bc27ccd513ff712af88a147eb99f5d0c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+394,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+395,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+396,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+397,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+398,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+399,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+400,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+401,0,skip_before_mainbody,![](images/d6ea3488c44f31c32406cb8e37f5d6a58c79c4b27313b3249fd94e8de099ceb2.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+402,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+403,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+404,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+405,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+406,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+407,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+408,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+409,0,skip_before_mainbody,![](images/5ffcf74b0e1d7b6de36604368cfbd4316ddf0362047f83b9d18e5e9171393765.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+410,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+411,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+412,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+413,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+414,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+415,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+416,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+417,0,skip_before_mainbody,![](images/0e670c94dcdfe75e5c8e76548102ba6ecd40662686aeeacf67126914e79829a6.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+418,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+419,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+420,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+421,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+422,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+423,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+424,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+425,0,skip_before_mainbody,![](images/476b1de6d3fa04bd5a5e36ba3b8222dd3059c50708f0d414e5db6b5fd01564ba.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+426,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+427,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+428,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+429,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+430,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+431,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+432,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+433,0,skip_before_mainbody,![](images/b9928909c13b87149480418ed50b9166169b071e3bc0512db710e1f9adef8081.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+434,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+435,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+436,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+437,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+438,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+439,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+440,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+441,0,skip_before_mainbody,![](images/f4c76cf4fc24ef4a0c15c96715cee6659e2ac83ae532dd09e534591b46ff0212.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+442,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+443,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+444,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+445,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+446,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+447,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+448,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+449,0,skip_before_mainbody,![](images/6fd9520636f4473e4194b601971c013ad5c63d054a7d35a7590ccffea8b1825d.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+450,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+451,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+452,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+453,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+454,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+455,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+456,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+457,0,skip_before_mainbody,![](images/e3a89a59eb1017b37177323108742ea17dca0d4cd119e03ca1a431cca0b160c8.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+458,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+459,0,skip_before_mainbody,<details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+460,0,skip_before_mainbody,<summary>natural_image</summary>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+461,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+462,0,skip_before_mainbody,"Completely blank white image with no visible content, text, or symbols.",parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+463,0,skip_before_mainbody,</details>,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+464,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+465,0,skip_before_mainbody,![](images/67e7df8a529ef400c2327b63fe2c6bafde4e865d45bedf78d8b1d9027f8bf93c.jpg),parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+466,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+467,0,skip_before_mainbody,# ANSWER SHEET Practice PLT Test,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+468,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
 469,1,start_item_inside_span|start_independent_item,1. Ⓐ Ⓑ ⓒ  ,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:137,,True
 470,2,start_item_inside_span|start_independent_item,2. A B C D  ,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:137,,True
 471,3,start_item_inside_span|start_independent_item,3. A B C D  ,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:137,,True

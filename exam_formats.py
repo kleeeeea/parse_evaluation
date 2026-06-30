@@ -88,7 +88,11 @@ class ExamFormat:
         # 与 "## Discrete Multiple-Choice Questions" 两种节标题）。
         # questions_span_trigger_res: tuple[re.Pattern, ...]
         return any(_re_compile(r).match(line) for r in [
-                r'^##\s+Case History \d+\s*$',
+                r'^##\s+(?:PLT\s+)?Case History \d+(?:\.\d+)?\s*$',
+                _re_compile(
+                        r'^##\s+SCENARIO\s+\d+:\s+.*CASE HISTORY\s*$',
+                        re.IGNORECASE,
+                ),
                 _re_compile(
                         r'^##\s+Constructed-Response Questions:\s+Case History #?\d+\s*$',
                         re.IGNORECASE,
@@ -96,6 +100,12 @@ class ExamFormat:
                 _re_compile(r'^##\s+Discrete Multiple-Choice Questions\s*$'),
                 _re_compile(r'^\s*Use the following passage', re.IGNORECASE)
         ])
+
+    def is_question_non_context_section_starting_line(self, line: str) -> bool:
+        return bool(_re_compile(
+                r'^##\s+(?:Practice\s+)?PLT Multiple-Choice Questions\b',
+                re.IGNORECASE,
+        ).match(line))
 
     def maybe_get_span_first_last_itemnumber_from_item_starting_line(self, line: str) -> bool:
         # # 声明题号范围的行：group(1)=起始题号，group(2)=结束题号（可缺省=单题）。

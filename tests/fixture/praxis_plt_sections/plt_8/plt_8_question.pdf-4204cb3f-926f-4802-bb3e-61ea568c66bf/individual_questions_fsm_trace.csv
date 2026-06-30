@@ -1,14 +1,14 @@
 finished_lines_count,included_items,action,line,caller_function,caller_location,expected_span_first_question,has_mainbody_started
-1,0,skip_before_mainbody,The Praxis Series Professional Assessments for Beginning Teachers,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-2,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-3,0,skip_before_mainbody,Test Name: Principles of Learning and Teaching,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-4,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-5,0,skip_before_mainbody,Practice Case Histories and Constructed-Response Questions,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-6,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-7,0,skip_before_mainbody,Time -120 minutes,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-8,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-9,0,skip_before_mainbody,12 Short-Answer Questions and 24 Multiple-Choice Questions,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
-10,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:213,,False
+1,0,skip_before_mainbody,The Praxis Series Professional Assessments for Beginning Teachers,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+2,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+3,0,skip_before_mainbody,Test Name: Principles of Learning and Teaching,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+4,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+5,0,skip_before_mainbody,Practice Case Histories and Constructed-Response Questions,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+6,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+7,0,skip_before_mainbody,Time -120 minutes,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+8,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+9,0,skip_before_mainbody,12 Short-Answer Questions and 24 Multiple-Choice Questions,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
+10,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:215,,False
 11,0,append_to_context|start_context_item_span,## Case History 1,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
 12,0,append_to_context,,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
 13,0,append_to_context,Directions: The case history is followed by three short-answer questions.,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
@@ -453,4 +453,4 @@ finished_lines_count,included_items,action,line,caller_function,caller_location,
 452,36,append_to_item,,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
 453,36,append_to_item,1,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
 454,36,append_to_item,,_process_line_for_streaming_questions,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:147,,True
-455,36,finish_mainbody,## Diagnostic Test Form,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:197,,True
+455,36,finish_mainbody,## Diagnostic Test Form,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_2_parse_questions.py:199,,True
