@@ -37,6 +37,10 @@ class NumberedItem:
     content: str
     number: int
 
+@dataclass(frozen=True)
+class NumberedItemWithContext(NumberedItem):
+    context: str
+
 
 @dataclass
 class LineTraceRecord:
@@ -54,6 +58,7 @@ class LineTraceRecord:
     caller_function: str
     caller_location: str
     expected_span_first_question: int | None = None
+    has_mainbody_started: bool = False
 
 
 @dataclass(frozen=True)

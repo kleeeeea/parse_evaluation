@@ -47,7 +47,7 @@ class ExamFormat:
                 _re_compile(r'^#\s+.*Answers and Explanations', re.IGNORECASE),
         ])
 
-    def is_question_span_line(self, line: str) -> bool:
+    def is_question_context_start_line(self, line: str) -> bool:
         return any(_re_compile(r).match(line) for r in [
                 r'^##\s+Case History \d+\s*$',
                 _re_compile(

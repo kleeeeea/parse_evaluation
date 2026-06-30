@@ -79,21 +79,9 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
                 debug=debug,
         )
         self.next_span_first_question = 1
-        self.started = False               # 是否已开过 span（无-trigger 独立题的 WARNING 判据）
 
-    def _record_source_line(
-            self,
-            line_index: int,
-            line: str,
-            action: str,
-            item_number: int | None = None):
-        if item_number is None:
-            item_number = self.exam_format.get_possible_item_number(line)
-        # 直接复用父类 _1_parse_answers.py 的 _record_line（含去重合并与调用栈信息）：
-        # 先把它依赖的内部状态摆好，再补上 question-FSM 专属的 span 维度字段。
-        self.current_line_number = line_index
-        self.current_item_number = item_number
-        self._record_line(action)
+    def _record_line(self, action: str):
+        super()._record_line(action)
         rec = self.line_trace[-1]
         rec.expected_item_number = self.next_item_number
         rec.expected_span_first_question = self.next_span_first_question
@@ -101,7 +89,7 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
     def _is_span_start(self, line):
         """span 的两种起点：trigger 行（命中任一 trigger），或题号 == 下一 span
         首题号的无-trigger 独立题。"""
-        if self.exam_format.is_question_span_line(line):
+        if self.exam_format.is_question_context_start_line(line):
             return True
         return self.exam_format.get_possible_item_number(line) == self.next_span_first_question
 
@@ -124,14 +112,17 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
         span = [lines[i]]
         start_action = (
                 'start_span'
-                if self.exam_format.is_question_span_line(lines[i])
+                if self.exam_format.is_question_context_start_line(lines[i])
                 else 'start_independent_item'
         )
-        self._record_source_line(i, lines[i], start_action)
+        self.current_line_number = i
+        self.current_item_number = self.exam_format.get_possible_item_number(
+                lines[i])
+        self._record_line(start_action)
         self._apply_range(lines[i])
         i += 1
         while i < len(lines):
-            if self.exam_format.is_question_span_line(lines[i]):
+            if self.exam_format.is_question_context_start_line(lines[i]):
                 break
             if stop_at_question_start and self._is_span_start(lines[i]):
                 break
@@ -141,7 +132,10 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
                     if self.exam_format.get_possible_item_number(lines[i])
                     else 'append_to_span'
             )
-            self._record_source_line(i, lines[i], action)
+            self.current_line_number = i
+            self.current_item_number = self.exam_format.get_possible_item_number(
+                    lines[i])
+            self._record_line(action)
             self._apply_range(lines[i])
             i += 1
         return span, i
@@ -197,6 +191,12 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
              if self.exam_format.get_possible_item_number( line) == self.next_item_number),
             len(lines))
         passage = '\n'.join(lines[:first_question_idx]).rstrip()
+        span_start_line_index = self.current_span_start_line_index
+        if first_question_idx > 0:
+            self.current_line_number = span_start_line_index + first_question_idx - 1
+            self.current_item_number = self.exam_format.get_possible_item_number(
+                    lines[first_question_idx - 1])
+            self._record_line('finish_question_context')
 
         # 再在首题及其后的行上分题：题号从全局连续计数起严格递增（FSM 内判定），
         # 上界开放（一个 span 的题数不预先知道）
@@ -211,37 +211,59 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
             ),
         )
         for qnum, qlines in items:
+            item_line_index = span_start_line_index + next(
+                    i for i, line in enumerate(lines)
+                    if self.exam_format.get_possible_item_number(line) == qnum
+            )
+            self.current_line_number = item_line_index
+            self.current_item_number = qnum
+            self._record_line('attach_question_context')
             self.items.append(
                 (qnum, passage, '\n'.join(qlines).strip()))
+        if first_question_idx > 0 and items:
+            last_qnum = items[-1][0]
+            last_item_line_index = span_start_line_index + next(
+                    i for i, line in enumerate(lines)
+                    if self.exam_format.get_possible_item_number(line) == last_qnum
+            )
+            self.current_line_number = last_item_line_index
+            self.current_item_number = last_qnum
+            self._record_line('clear_question_context')
         self.next_item_number += len(items)  # 跨 span 推进全局题号
         self.next_span_first_question = max(
             self.next_span_first_question, self.next_item_number)
 
-    def _parse_till_span_finish(self, lines, i):
+    def _parse_till_context_item_finish(self, lines):
         """passage-question span：从 trigger 行起，吃完整个 span（passage + 其各题）。"""
-        self.started = True
-        span, i = self._consume(lines, i, stop_at_question_start=False)
+        self.has_mainbody_started = True
+        i = self.current_line_number
+        self.current_span_start_line_index = i
+        span, next_i = self._consume(lines, i, stop_at_question_start=False)
         self._emit_span(span)
-        return i
+        # _emit_span 会反复改动 self.current_line_number，这里复位到 span 之后的待处理行
+        self.current_line_number = next_i
 
-    def parse_till_item_finish(self, lines, i):
+    def parse_till_item_finish(self, lines):
         """无 passage 的独立题：从题目行起，吃完这一道题。"""
-        if self.started:
+        if self.has_mainbody_started:
             print(f'WARNING: question {self.next_span_first_question} appeared '
                   f'without a preceding trigger line — if it has a '
                   f'passage, the passage stayed in the previous span')
-        self.started = True
+        self.has_mainbody_started = True
         self.next_span_first_question += 1
         # 独立题内不会出现 range 行：praxis 的 range 行就是 trigger（会被
         # _is_span_start 先终止本 span）；plt 的 "Directions:" 行必跟在
         # Case History/Discrete trigger 之后，不会落在无-trigger 的独立题里。
         # 因此 _consume 沿途的 _apply_range 必是 no-op，不会推进首题号——断言之。
         before = self.next_span_first_question
-        span, i = self._consume(lines, i)
+        i = self.current_line_number
+        self.current_span_start_line_index = i
+        span, next_i = self._consume(lines, i)
         assert self.next_span_first_question == before, (
             f'independent question span unexpectedly contained a range line: {span!r}')
         self._emit_span(span)
-        return i
+        # 同上：_emit_span 改动游标后复位到下一待处理行
+        self.current_line_number = next_i
 
     def parse(self, md_text):
         lines = md_text.splitlines()
@@ -251,23 +273,26 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
         self.next_item_number = 1
         self.next_itemspan_first_itemnumber = 1
         self.next_span_first_question = 1
-        self.started = False
-        i = 0
-        while i < len(lines):
-            line = lines[i]
-            if self.exam_format.is_question_span_line(line):
-                # passage-question span 起点
-                i = self._parse_till_span_finish(lines, i)
+        self.has_mainbody_started = False
+        # 用实例属性 self.current_line_number 作为唯一的行游标（与父类 parse 一致），
+        # 各 helper 返回的下一个下标赋回它即可。
+        self.current_line_number = 0
+        while self.current_line_number < len(lines):
+            line = lines[self.current_line_number]
+            if self.exam_format.is_question_context_start_line(line):
+                # passage-question span 起点；helper 内部推进 self.current_line_number
+                self._parse_till_context_item_finish(lines)
             elif self.exam_format.get_possible_item_number( line) == self.next_span_first_question:
-                # 无 passage 的独立题起点
-                i = self.parse_till_item_finish(lines, i)
+                # 无 passage 的独立题起点；helper 内部推进 self.current_line_number
+                self.parse_till_item_finish(lines)
             else:
                 # 既非 trigger 也非独立题起点——只可能是首个 span 之前的杂行。
                 # mainbody 已被 _1 裁剪到首个 span 起点，正常不会走到这里
                 # （range 行要么是 trigger=进入 span，要么在 span 内被 _consume 吞掉），
                 # 跳过即可。
-                self._record_source_line(i, line, 'skip')
-                i += 1
+                self.current_item_number = self.exam_format.get_possible_item_number(line)
+                self._record_line('skip')
+                self.current_line_number += 1
         print(f'FSM parsed {len(self.items)} questions '
               f'(1..{self.next_item_number - 1})')
         return self.items
@@ -310,6 +335,7 @@ class SplitQuestionMainbodyIntoIndividualQuestionsStage(Stage):
                             'caller_function',
                             'caller_location',
                     ],
+                    extrasaction='ignore',
             )
             writer.writeheader()
             writer.writerows(asdict(r) for r in fsm.line_trace)

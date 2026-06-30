@@ -33,7 +33,7 @@ def _get_questions_mainbody(md_text, exam_format: ExamFormat):
     # 处理第一个题目没有Passage， 直接是 "1.{question}" 的情况：
     # 起点取「第一个 trigger 行」和「题号为 1 的题目行」中更早出现者
     def _is_mainbody_start(l):
-        if exam_format.is_question_span_line(l):
+        if exam_format.is_question_context_start_line(l):
             return True
         return exam_format.get_possible_item_number(l) == 1
 

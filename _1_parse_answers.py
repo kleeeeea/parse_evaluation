@@ -38,13 +38,18 @@ class AnswerMainbodyFSM:
         self.line_trace: list[LineTraceRecord] = []
 
         self.is_verbose = debug
+        self.has_mainbody_started = False               # 是否已开过 span（无-trigger 独立题的 WARNING 判据）
 
     def _record_line(self, action: str):
         # 行内容、行号、题号一律取内部状态，调用方只传 action
         line_index = self.current_line_number
         line = self.lines[line_index]
         line_number = line_index + 1
-        item_number_value = len(self.items)
+        item_number_value = (
+                self.current_item_number
+                if self.current_item_number is not None
+                else len(self.items)
+        )
         # also record callers stack info: function name, caller's filename and line number
         caller = sys._getframe(1)
         # 跳过 _record_* 包装层（如子类的 _record_source_line），定位真正的业务调用点
@@ -61,6 +66,8 @@ class AnswerMainbodyFSM:
                 self.line_trace[-1].item_number = item_number_value
             self.line_trace[-1].expected_item_number = (
                     self.next_itemspan_first_itemnumber)
+            self.line_trace[-1].has_mainbody_started = (
+                    self.has_mainbody_started)
             return
 
         self.line_trace.append(LineTraceRecord(
@@ -71,6 +78,7 @@ class AnswerMainbodyFSM:
                 line=line,
                 caller_function=caller_function,
                 caller_location=caller_location,
+                has_mainbody_started=self.has_mainbody_started,
         ))
 
     def is_item_start(self, line):
@@ -88,7 +96,12 @@ class AnswerMainbodyFSM:
         # 因而无需把 line_index 传进 _record_line。
         while True:
             next_line_number = self.current_line_number + 1
-            if next_line_number >= len(lines) or self.is_item_start(lines[next_line_number]):
+            if (
+                    next_line_number >= len(lines)
+                    or self.exam_format.is_answer_mainbody_end_line(
+                            lines[next_line_number])
+                    or self.is_item_start(lines[next_line_number])
+            ):
                 self._record_line('finish_item')
                 self.current_line_number = next_line_number
                 break
@@ -116,36 +129,48 @@ class AnswerMainbodyFSM:
         self.line_trace = []
         self.next_itemspan_first_itemnumber = 1
         self.current_item_number = None
+        self.has_mainbody_started = False
         while self.current_line_number < len(lines):
             line = lines[self.current_line_number]
+            if (
+                    self.has_mainbody_started
+                    and self.exam_format.is_answer_mainbody_end_line(line)
+            ):
+                self._record_line('finish_mainbody')
+                break
             if self.exam_format.get_possible_item_number(line) == self.next_itemspan_first_itemnumber:
                 # 无 passage 的独立题起点
+                if not self.has_mainbody_started:
+                    self.has_mainbody_started = True
                 self.parse_till_item_finish(lines)
             else:
                 # 既非 trigger 也非独立题起点——只可能是首个 span 之前的杂行。
                 # mainbody 已被 _1 裁剪到首个 span 起点，正常不会走到这里
                 # （range 行要么是 trigger=进入 span，要么在 span 内被 _consume 吞掉），
                 # 跳过即可。
-                self._record_line('skip')
+                self._record_line(
+                        'skip_inside_mainbody'
+                        if self.has_mainbody_started
+                        else 'skip_before_mainbody')
                 self.current_line_number += 1
         return self.items
 
 
-def slice_mainbody(lines, is_start, is_end, *, default_start):
-    """切出文档主体的 [start, end) 行区间，供「题目主体」「答案主体」复用。
-
-    start：第一条 is_start(line) 命中的行；没命中则用 default_start
-    （题目主体取 0=文件头；答案主体取 len(lines)=空切片，没有答案区时）。
-    end：start 之后第一条 is_end(line) 命中的行；没命中则到文件尾。
-    再剥掉主体末尾的空行和孤立页码行（mineru 把页脚页码解析成单独一行，
-    否则会挂在最后一题/最后一条答案的尾部）。返回 (start, end) 下标。
-    """
-    start = next((i for i, l in enumerate(lines) if is_start(l)), default_start)
-    end = next((i for i in range(start, len(lines)) if is_end(lines[i])), len(lines))
-    while end > start and (not lines[end - 1].strip()
-                           or re.fullmatch(r'\s*\d+\s*', lines[end - 1])):
-        end -= 1
-    return start, end
+# def slice_mainbody(lines, is_start, is_end, *, default_start):
+#     """切出文档主体的 [start, end) 行区间，供「题目主体」「答案主体」复用。
+#
+#     start：第一条 is_start(line) 命中的行；没命中则用 default_start
+#     （题目主体取 0=文件头；答案主体取 len(lines)=空切片，没有答案区时）。
+#     end：start 之后第一条 is_end(line) 命中的行；没命中则到文件尾。
+#     再剥掉主体末尾的空行和孤立页码行（mineru 把页脚页码解析成单独一行，
+#     否则会挂在最后一题/最后一条答案的尾部）。返回 (start, end) 下标。
+#     """
+#     start = next((i for i, l in enumerate(lines) if is_start(l)), default_start)
+#     end = next((i for i in range(start, len(lines)) if is_end(lines[i])), len(lines))
+#     while end > start and (not lines[end - 1].strip()
+#                            or re.fullmatch(r'\s*\d+\s*', lines[end - 1])):
+#         end -= 1
+#     return start, end
 
 
 def _split_markdown_into_answer_spans(
@@ -160,12 +185,8 @@ def _split_markdown_into_answer_spans(
     把答案解析里引用的题号挡在外面。expected_end_num 为 None 时不设上界。
     """
     lines = md_text.splitlines()
-    start, end = slice_mainbody(
-            lines, exam_format.is_answer_mainbody_start_line, exam_format.is_answer_mainbody_end_line,
-            default_start=len(lines))
-
     fsm = AnswerMainbodyFSM(exam_format=exam_format)
-    parse = fsm.parse(lines[start:end])
+    parse = fsm.parse(lines)
     if fsm_trace_output_csv:
         with open(fsm_trace_output_csv, 'w', newline='') as f:
             writer = csv.DictWriter(
@@ -178,6 +199,7 @@ def _split_markdown_into_answer_spans(
                             'line',
                             'caller_function',
                             'caller_location',
+                            'has_mainbody_started',
                     ],
                     # answer FSM 不用 expected_span_first_question 列，忽略之
                     extrasaction='ignore',
