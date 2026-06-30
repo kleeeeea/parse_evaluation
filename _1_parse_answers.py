@@ -46,28 +46,28 @@ class AnswerMainbodyFSM:
 
         self.is_verbose = debug
         self.has_mainbody_started = False               # 是否已开过 span（无-trigger 独立题的 WARNING 判据）
-        self.finished_lines = 0
+        self.finished_lines_count = 0
 
     def _assert_finished_lines_cursor(self):
-        if not hasattr(self, 'finished_lines'):
-            raise AttributeError('finished_lines must be initialized before recording trace')
+        if not hasattr(self, 'finished_lines_count'):
+            raise AttributeError('finished_lines_count must be initialized before recording trace')
         if not hasattr(self, 'lines'):
             raise AttributeError('lines must be initialized before recording trace')
-        if not 0 <= self.finished_lines < len(self.lines):
+        if not 0 <= self.finished_lines_count < len(self.lines):
             raise IndexError(
-                    f'finished_lines={self.finished_lines} is outside '
+                    f'finished_lines={self.finished_lines_count} is outside '
                     f'0..{len(self.lines) - 1}')
 
     def _record_last_finished_line_action(self, action: str):  # action 取 TraceAction 的常量
         # make sure self.finished_lines is advanced before calling this.
         # 行内容、行号、题号一律取内部状态，调用方只传 action。
-        if not hasattr(self, 'finished_lines'):
-            raise AttributeError('finished_lines must be initialized before recording trace')
+        if not hasattr(self, 'finished_lines_count'):
+            raise AttributeError('finished_lines_count must be initialized before recording trace')
         if not hasattr(self, 'lines'):
             raise AttributeError('lines must be initialized before recording trace')
-        if not 0 < self.finished_lines <= len(self.lines):
+        if not 0 < self.finished_lines_count <= len(self.lines):
             raise IndexError(
-                    f'finished_lines={self.finished_lines} has no last finished line '
+                    f'finished_lines={self.finished_lines_count} has no last finished line '
                     f'in 1..{len(self.lines)}')
         # 题号直接取已产出题数：item 在记录前已 append 到 self.items，
         # len(self.items) 即当前题号；不再依赖含义模糊的 self.current_item_number
@@ -79,7 +79,7 @@ class AnswerMainbodyFSM:
         caller_function = caller.f_code.co_name
         # 完整路径 + 行号，格式如 /abs/path/_1_parse_answers.py:83，便于点击跳转
         caller_location = f'{caller.f_code.co_filename}:{caller.f_lineno}'
-        if self.line_trace and self.line_trace[-1].finished_lines == self.finished_lines:
+        if self.line_trace and self.line_trace[-1].finished_lines_count == self.finished_lines_count:
             existing_actions = self.line_trace[-1].action.split('|')
             if action not in existing_actions:
                 self.line_trace[-1].action += f'|{action}'
@@ -93,42 +93,42 @@ class AnswerMainbodyFSM:
 
         self.line_trace.append(LineTraceRecord(
                 # 只记录原始状态 self.finished_lines，不再派生 line_number
-                finished_lines=self.finished_lines,
+                finished_lines_count=self.finished_lines_count,
                 included_items=(len(self.items)),  # 去掉这个没起作用的
                 next_itemspan_first_itemnumber=self.next_itemspan_first_itemnumber,
-                line=(self.lines[self.finished_lines - 1]),
+                line=(self.lines[self.finished_lines_count - 1]),
                 has_mainbody_started=self.has_mainbody_started,
                 action=action,
                 caller_function=caller_function,
                 caller_location=caller_location,
         ))
 
-    def is_item_start(self, line):
+    def is_next_item_start(self, line):
         # 答案主体起点：含 "Answers and Explanations" 的顶级标题
         return self.exam_format.get_possible_item_number(line) == self.next_itemspan_first_itemnumber
 
     def parse_till_item_finish(self, lines):
         """无 passage 的独立题：从题目行起，吃完这一道题。"""
         self.items.append(NumberedItem(
-                lines=[lines[self.finished_lines]],
+                lines=[lines[self.finished_lines_count]],
                 number=self.next_itemspan_first_itemnumber,
         ))
         self.next_itemspan_first_itemnumber += 1
 
         # new_span =
-        self.finished_lines += 1
+        self.finished_lines_count += 1
         self._record_last_finished_line_action(TraceAction.START_ITEM)
         # finished_lines 始终表示已经消费的行数，也就是下一待处理行下标。
-        while self.finished_lines < len(lines):
-            next_line_number = self.finished_lines
+        while self.finished_lines_count < len(lines):
+            next_line_number = self.finished_lines_count
             if (
                     self.exam_format.is_answer_mainbody_end_line(lines[next_line_number])
-                    or self.is_item_start(lines[next_line_number])
+                    or self.is_next_item_start(lines[next_line_number])
             ):
                 self._record_last_finished_line_action(TraceAction.FINISH_ITEM)
                 break
-            self.items[-1].lines.append(lines[self.finished_lines])
-            self.finished_lines += 1
+            self.items[-1].lines.append(lines[self.finished_lines_count])
+            self.finished_lines_count += 1
             self._record_last_finished_line_action(TraceAction.APPEND_TO_ITEM)
         else:
             self._record_last_finished_line_action(TraceAction.FINISH_ITEM)
@@ -149,13 +149,13 @@ class AnswerMainbodyFSM:
         self.lines = lines
         if lines:
             self._assert_finished_lines_cursor()
-        while self.finished_lines < len(lines):
-            line = lines[self.finished_lines]
+        while self.finished_lines_count < len(lines):
+            line = lines[self.finished_lines_count]
             if (
                     self.has_mainbody_started
                     and self.exam_format.is_answer_mainbody_end_line(line)
             ):
-                self.finished_lines += 1
+                self.finished_lines_count += 1
                 self._record_last_finished_line_action(TraceAction.FINISH_MAINBODY)
                 break
             if self.exam_format.get_possible_item_number(line) == self.next_itemspan_first_itemnumber:
@@ -168,7 +168,7 @@ class AnswerMainbodyFSM:
                 # mainbody 已被 _1 裁剪到首个 span 起点，正常不会走到这里
                 # （range 行要么是 trigger=进入 span，要么在 span 内被 _consume 吞掉），
                 # 跳过即可。
-                self.finished_lines += 1
+                self.finished_lines_count += 1
                 self._record_last_finished_line_action(
                         TraceAction.SKIP_INSIDE_MAINBODY
                         if self.has_mainbody_started

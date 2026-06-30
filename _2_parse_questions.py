@@ -49,13 +49,13 @@ c. indicate that the quality of automobiles being developed in Europe was very p
 d. suggest that the kind of car he drove is what helped him win the race.
 e. help the reader understand the differences between two-cylinder vehicles and electric automobiles.
 """
+
+
 # split the mineruparsed data into csvs and save it into output_csv
 
 # 卷型相关的正则（trigger / 题目行 / 范围声明行）统一定义在 exam_formats.py。
 
 # enforce passing in expected_end_num
-
-
 
 
 class QuestionMainbodyFSM(AnswerMainbodyFSM):
@@ -82,25 +82,31 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
                 exam_format=exam_format,
                 debug=debug,
         )
-        self.items:List[NumberedItemWithContext] = []  # 产出 [(qnum, passage, question_text)]
-        self.next_item_number = 1
         # 用实例属性 self.finished_lines 作为唯一的行游标（与父类 parse 一致），
         # 各 helper 返回的下一个下标赋回它即可。
+        self._reset_parse_state()
+
+    def _reset_parse_state(self):
+        self.items: List[NumberedItemWithContext] = []
+        self.line_trace = []
+        self.next_itemnumber = 1
+        self.next_itemspan_first_itemnumber = 1
+        # self.current_item_number = None
+        self.has_mainbody_started = False
+        self.finished_lines_count = 0
+        self._span_item_count_before = 0
+        self._span_context_lines = []
+        self._span_current_question_lines = []
+        self._updated_in_span_question_number = None
+        self._updated_in_span_next_itemspan_first_itemnumber = None
 
     def _record_last_finished_line_action(self, action: str):
         super()._record_last_finished_line_action(action)
         rec = self.line_trace[-1]
-        rec.next_itemspan_first_itemnumber = self.next_item_number
+        rec.next_itemspan_first_itemnumber = self.next_itemnumber
         rec.expected_span_first_question = self.next_itemspan_first_itemnumber
 
-    def _is_span_start(self, line):
-        """span 的两种起点：trigger 行（命中任一 trigger），或题号 == 下一 span
-        首题号的无-trigger 独立题。"""
-        if self.exam_format.is_question_context_start_line(line):
-            return True
-        return self.exam_format.get_possible_item_number(line) == self.next_itemspan_first_itemnumber
-
-    def _maybe_update_next_span_first_question(self, line):
+    def _maybe_set_next_itemspan_first_itemnumber(self, line):
         """范围声明行（praxis 的 trigger 行本身 / plt 的 span 内 Directions 行）
         把下一 span 首题号推到 b+1。"""
         question_range = self.exam_format.get_possible_question_range(line)
@@ -117,34 +123,32 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
         self._span_item_count_before = len(self.items)
         self._span_context_lines = []
         self._span_current_question_lines = []
-        self._span_current_question_number = None
-        self._span_last_question_number = None
+        self._updated_in_span_question_number = None
+        self._updated_in_span_next_itemspan_first_itemnumber = None
 
     def _set_span_end_from_range_line(self, old_next_itemspan_first_itemnumber):
         if self.next_itemspan_first_itemnumber != old_next_itemspan_first_itemnumber:
-            self._span_last_question_number = self.next_itemspan_first_itemnumber - 1
+            self._updated_in_span_next_itemspan_first_itemnumber = self.next_itemspan_first_itemnumber - 1
 
-    def _is_expected_question_start(self, line):
+    def _is_valid_next_item_start_line(self, line):
         qnum = self.exam_format.get_possible_item_number(line)
-        if qnum != self.next_item_number:
+        if qnum != self.next_itemnumber:
             return False
-        if (
-                self._span_last_question_number is not None
-                and qnum > self._span_last_question_number
-        ):
-            return False
+        if self._updated_in_span_next_itemspan_first_itemnumber is not None:
+            if qnum > self._updated_in_span_next_itemspan_first_itemnumber:
+                return False
         return True
 
     def _finish_current_streaming_question(self):
-        if self._span_current_question_number is None:
+        if self._updated_in_span_question_number is None:
             return
         self.items.append(NumberedItemWithContext(
                 lines=self._span_current_question_lines,
-                number=self._span_current_question_number,
+                number=self._updated_in_span_question_number,
                 context='\n'.join(self._span_context_lines).rstrip(),
         ))
         self._span_current_question_lines = []
-        self._span_current_question_number = None
+        self._updated_in_span_question_number = None
 
     def _process_line_for_streaming_questions(self, line):
         """Update passage/question state for one consumed span line.
@@ -152,26 +156,26 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
         Returns True when this line starts a newly attached question, so the
         caller can merge ATTACH_QUESTION_CONTEXT into this line's trace record.
         """
-        if not self._is_expected_question_start(line):
-            if self._span_current_question_number is None:
+        if self._is_valid_next_item_start_line(line):
+            if self._updated_in_span_question_number is not None:
+                self._finish_current_streaming_question()
+            elif self._span_context_lines:
+                # self.current_item_number = self.exam_format.get_possible_item_number(
+                #         self.lines[self.finished_lines - 1])
+                self._record_last_finished_line_action(
+                        TraceAction.FINISH_QUESTION_CONTEXT)
+
+            qnum = self.exam_format.get_possible_item_number(line)
+            self._updated_in_span_question_number = qnum
+            self._span_current_question_lines = [line]
+            self.next_itemnumber += 1
+            return True
+        else:
+            if self._updated_in_span_question_number is None:
                 self._span_context_lines.append(line)
             else:
                 self._span_current_question_lines.append(line)
             return False
-
-        if self._span_current_question_number is not None:
-            self._finish_current_streaming_question()
-        elif self._span_context_lines:
-            self.current_item_number = self.exam_format.get_possible_item_number(
-                    self.lines[self.finished_lines - 1])
-            self._record_last_finished_line_action(
-                    TraceAction.FINISH_QUESTION_CONTEXT)
-
-        qnum = self.exam_format.get_possible_item_number(line)
-        self._span_current_question_number = qnum
-        self._span_current_question_lines = [line]
-        self.next_item_number += 1
-        return True
 
     def _finish_streaming_span(self):
         self._finish_current_streaming_question()
@@ -179,144 +183,113 @@ class QuestionMainbodyFSM(AnswerMainbodyFSM):
                 len(self.items) > self._span_item_count_before
                 and self._span_context_lines
         ):
-            self.current_item_number = self.items[-1].number
+            # self.current_item_number = self.items[-1].number
             self._record_last_finished_line_action(
                     TraceAction.CLEAR_QUESTION_CONTEXT)
         self.next_itemspan_first_itemnumber = max(
                 self.next_itemspan_first_itemnumber,
-                self.next_item_number,
+                self.next_itemnumber,
         )
 
-    def _consume(self, lines, *, stop_at_question_start=True):
+    def _consume(self, start_action: str, *, stop_at_question_start=True):
         """从当前 span 起点（self.finished_lines）吃到下一个 span 起点 / EOF，
-        沿途处理 range 行。返回 span 的行列表；self.finished_lines 推进到
-        下一个待处理下标。"""
+        沿途处理 range 行并即时产出题目；self.finished_lines 推进到下一个待处理
+        下标。行序列统一取 self.lines，不再当参数传。"""
         self._begin_streaming_span()
-        line = lines[self.finished_lines]
-        span = [line]
-        start_action = (
-                TraceAction.START_SPAN
-                if self.exam_format.is_question_context_start_line(line)
-                else TraceAction.START_INDEPENDENT_ITEM
-        )
-        self.current_item_number = self.exam_format.get_possible_item_number(line)
+        line = self.lines[self.finished_lines_count]
+        # self.current_item_number = self.exam_format.get_possible_item_number(line)
         attached_question = self._process_line_for_streaming_questions(line)
-        old_next_itemspan_first_itemnumber = self.next_itemspan_first_itemnumber
-        self._maybe_update_next_span_first_question(line)
-        self._set_span_end_from_range_line(old_next_itemspan_first_itemnumber)
-        self.finished_lines += 1
+        self._maybe_set_next_itemspan_first_itemnumber(line)
+        self._set_span_end_from_range_line(self.next_itemspan_first_itemnumber)
+        self.finished_lines_count += 1
         self._record_last_finished_line_action(start_action)
         if attached_question:
-            self.current_item_number = self._span_current_question_number
+            # self.current_item_number = self._span_current_question_number
             self._record_last_finished_line_action(
                     TraceAction.ATTACH_QUESTION_CONTEXT)
-        while self.finished_lines < len(lines):
-            line = lines[self.finished_lines]
+        while self.finished_lines_count < len(self.lines):
+            line = self.lines[self.finished_lines_count]
             if self.exam_format.is_question_mainbody_end_line(line):
                 break
             if self.exam_format.is_question_context_start_line(line):
                 break
-            if stop_at_question_start and self._is_span_start(line):
+            if stop_at_question_start and self.is_next_item_start(line):
                 break
-            span.append(line)
             action = (
                     TraceAction.APPEND_ITEM_START_TO_SPAN
                     if self.exam_format.get_possible_item_number(line)
                     else TraceAction.APPEND_TO_SPAN
             )
-            self.current_item_number = self.exam_format.get_possible_item_number(line)
+            # self.current_item_number = self.exam_format.get_possible_item_number(line)
             attached_question = self._process_line_for_streaming_questions(line)
-            old_next_itemspan_first_itemnumber = self.next_itemspan_first_itemnumber
-            self._maybe_update_next_span_first_question(line)
-            self._set_span_end_from_range_line(old_next_itemspan_first_itemnumber)
-            self.finished_lines += 1
+            self._maybe_set_next_itemspan_first_itemnumber(line)
+            self._set_span_end_from_range_line(self.next_itemspan_first_itemnumber)
+            self.finished_lines_count += 1
             self._record_last_finished_line_action(action)
             if attached_question:
-                self.current_item_number = self._span_current_question_number
+                # self.current_item_number = self._span_current_question_number
                 self._record_last_finished_line_action(
                         TraceAction.ATTACH_QUESTION_CONTEXT)
         self._finish_streaming_span()
-        return span
 
-    def _emit_span(self, span_lines):
-        """span 关闭：非空则可选 debug 打印。题目产出已在 _consume 中完成。"""
-        text = '\n'.join(span_lines).strip()
-        if not text:
-            return
-        if self.is_verbose:
-            print('=' * 100)
-            print(text)
-
-    def _parse_till_context_item_finish(self, lines):
+    def _parse_till_context_item_finish(self):
         """passage-question span：从 trigger 行起，吃完整个 span（passage + 其各题）。"""
         self.has_mainbody_started = True
-        span = self._consume(lines, stop_at_question_start=False)
-        next_i = self.finished_lines  # _consume 推进后的下一待处理行
-        self._emit_span(span)
-        # debug 打印不应改变游标；复位到 span 之后的待处理行
-        self.finished_lines = next_i
+        self._consume(
+                TraceAction.START_SPAN,
+                stop_at_question_start=False)
 
-    def parse_till_item_finish(self, lines):
+    def parse_till_item_finish(self):
         """无 passage 的独立题：从题目行起，吃完这一道题。"""
-        if self.has_mainbody_started:
-            print(f'WARNING: question {self.next_itemspan_first_itemnumber} appeared '
-                  f'without a preceding trigger line — if it has a '
-                  f'passage, the passage stayed in the previous span')
+        # if self.has_mainbody_started:
+        #     print(f'WARNING: question {self.next_itemspan_first_itemnumber} appeared '
+        #           f'without a preceding trigger line — if it has a '
+        #           f'passage, the passage stayed in the previous span')
         self.has_mainbody_started = True
         self.next_itemspan_first_itemnumber += 1
         # 独立题内不会出现 range 行：praxis 的 range 行就是 trigger（会被
         # _is_span_start 先终止本 span）；plt 的 "Directions:" 行必跟在
         # Case History/Discrete trigger 之后，不会落在无-trigger 的独立题里。
         # 因此 _consume 沿途的 _apply_range 必是 no-op，不会推进首题号——断言之。
-        before = self.next_itemspan_first_itemnumber
-        span = self._consume(lines)
-        next_i = self.finished_lines  # _consume 推进后的下一待处理行
-        assert self.next_itemspan_first_itemnumber == before, (
-            f'independent question span unexpectedly contained a range line: {span!r}')
-        self._emit_span(span)
-        # debug 打印不应改变游标；复位到下一待处理行
-        self.finished_lines = next_i
+        # before = self.next_itemspan_first_itemnumber
+        self._consume(TraceAction.START_INDEPENDENT_ITEM)
 
-    def parse(self, md_text):
+    def parse(self, md_text) -> List[NumberedItemWithContext]:
         lines = md_text.splitlines()
         self.lines = lines
-        self.items = []
-        self.line_trace = []
-        self.next_item_number = 1
-        self.next_itemspan_first_itemnumber = 1
-        self.current_item_number = None
-        self.has_mainbody_started = False
-        self.finished_lines = 0
+        self._reset_parse_state()
 
-        while self.finished_lines < len(lines):
-            line = lines[self.finished_lines]
+        while self.finished_lines_count < len(lines):
+            line = lines[self.finished_lines_count]
             if (
                     self.has_mainbody_started
                     and self.exam_format.is_question_mainbody_end_line(line)
             ):
-                self.current_item_number = self.exam_format.get_possible_item_number(line)
-                self.finished_lines += 1
+                # self.current_item_number = self.exam_format.get_possible_item_number(line)
+                self.finished_lines_count += 1
                 self._record_last_finished_line_action(TraceAction.FINISH_MAINBODY)
                 break
             if self.exam_format.is_question_context_start_line(line):
                 # passage-question span 起点；helper 内部推进 self.finished_lines
-                self._parse_till_context_item_finish(lines)
-            elif self.exam_format.get_possible_item_number( line) == self.next_itemspan_first_itemnumber:
+                # 行序列已在 self.lines 里，helper 直接读取，不再传 lines
+                self._parse_till_context_item_finish()
+            elif self.is_next_item_start(line):
                 # 无 passage 的独立题起点；helper 内部推进 self.finished_lines
-                self.parse_till_item_finish(lines)
+                self.parse_till_item_finish()
             else:
                 # 既非 trigger 也非独立题起点——只可能是首个 span 之前的杂行。
                 # mainbody 已被 _1 裁剪到首个 span 起点，正常不会走到这里
                 # （range 行要么是 trigger=进入 span，要么在 span 内被 _consume 吞掉），
                 # 跳过即可。
-                self.current_item_number = self.exam_format.get_possible_item_number(line)
-                self.finished_lines += 1
+                # self.current_item_num = self.exam_format.get_possible_item_number(line)
+                self.finished_lines_count += 1
                 self._record_last_finished_line_action(
                         TraceAction.SKIP_INSIDE_MAINBODY
                         if self.has_mainbody_started
-                        else TraceAction.SKIP_BEFORE_MAINBODY)
+                        else TraceAction.SKIP_BEFORE_MAINBODY
+                )
         print(f'FSM parsed {len(self.items)} questions '
-              f'(1..{self.next_item_number - 1})')
+              f'(1..{self.next_itemnumber - 1})')
         return self.items
 
 
@@ -334,11 +307,11 @@ class SplitQuestionMainbodyIntoIndividualQuestionsStage(Stage):
             writer.writeheader()
             for item in questions:
                 writer.writerow(asdict(IndividualQuestionRow(
-                    question_number=str(item.number),
-                    passage=item.context,
-                    question='\n'.join(item.lines).strip(),
-                    # 题目侧没有截图路径来源，恒取默认值（原 _3 同此）
-                    original_page_screenshot_paths='[]',
+                        question_number=str(item.number),
+                        passage=item.context,
+                        question='\n'.join(item.lines).strip(),
+                        # 题目侧没有截图路径来源，恒取默认值（原 _3 同此）
+                        original_page_screenshot_paths='[]',
                 )))
         trace_output_path = os.path.join(
                 os.path.dirname(os.path.abspath(output_path)),
@@ -355,7 +328,8 @@ class SplitQuestionMainbodyIntoIndividualQuestionsStage(Stage):
         print(f'wrote {len(questions)} questions to {output_path}')
         print(f'wrote question FSM trace to {trace_output_path}')
 
+
 if __name__ == '__main__':
     # 从 fixture 的输入 md 沿 _1_ 的 derive 推出 questions_mainbody.md
     SplitQuestionMainbodyIntoIndividualQuestionsStage().run(
-        GetQuestionsMainbodyStage().derive_output_path(mineruparsed))
+            GetQuestionsMainbodyStage().derive_output_path(mineruparsed))

@@ -72,7 +72,7 @@ class LineTraceRecord:
     expected_span_first_question 与真实调用栈。expected_span_first_question
     仅 question FSM 用到，answer FSM 留 None（其 CSV 不含该列）。
     """
-    finished_lines: int  # 记录原始游标状态（0-based），不再派生 line_number
+    finished_lines_count: int  # 记录原始游标状态（0-based），不再派生 line_number
     next_itemspan_first_itemnumber: int
     included_items: int | str
     action: str

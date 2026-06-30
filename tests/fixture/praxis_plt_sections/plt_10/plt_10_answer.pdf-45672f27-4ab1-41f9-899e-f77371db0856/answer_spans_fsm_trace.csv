@@ -1,4 +1,4 @@
-finished_lines,next_itemspan_first_itemnumber,included_items,action,line,caller_function,caller_location,expected_span_first_question,has_mainbody_started
+finished_lines_count,next_itemspan_first_itemnumber,included_items,action,line,caller_function,caller_location,expected_span_first_question,has_mainbody_started
 1,1,0,skip_before_mainbody,## ANSWERS AND EXPLANATIONS,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_1_parse_answers.py:172,,False
 2,1,0,skip_before_mainbody,,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_1_parse_answers.py:172,,False
 3,1,0,skip_before_mainbody,## PLT Constructed-Response Questions,parse,/Users/l/klee_code/git_repos/llm_evals/parse_evaluation/_1_parse_answers.py:172,,False
